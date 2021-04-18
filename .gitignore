@@ -1,0 +1,17 @@
+Debug/
+
+.vs/
+
+Pazymys-skaiciuokle.sln
+
+Pazymys-skaiciuokle.vcxproj
+
+Pazymys-skaiciuokle.vcxproj.user
+
+Release/
+
+*.exe
+
+data/
+
+nuoroda.txt
