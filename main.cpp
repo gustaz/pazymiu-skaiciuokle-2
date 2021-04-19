@@ -18,6 +18,11 @@ int main(int argc, char* argv[])
 	std::cin.sync_with_stdio(false);
 	std::cout.sync_with_stdio(false);
 
+    Studentas patestavimui;
+    patestavimui.setVardas("Nukopintas");
+    Studentas baigtis = patestavimui;
+    std::cout << baigtis.getVardas() << std::endl;
+
 	std::cout << "Atsakydami i programos uzduodamus klausimus rasykite raides T (-taip) arba N (-ne)."
 		<< std::endl;
 

@@ -11,6 +11,33 @@ private:
     double vid, med;
 public:
     Studentas() : vardas(""), pavarde(""), egz(0), vid(0), med(0) { }
+    Studentas(std::string vardas, std::string pavarde, int egz, std::vector<int> nd, double vid, double med) : vardas(vardas), pavarde(pavarde), egz(egz), vid(vid), med(med) { }
+    Studentas (const Studentas& a) : vardas(a.getVardas()), pavarde(a.getPavarde()), egz(a.getEgz()) , vid(a.getVid()), med(a.getMed())
+    {
+        nd.reserve(a.getNd().size());
+        for(int i : a.getNd()) 
+        {
+            nd.push_back(i);
+        }
+    }
+    Studentas& operator=(const Studentas& a) 
+    {
+        if(&a == this) return *this;
+
+        vardas = a.getVardas();
+        pavarde = a.getPavarde();
+        egz = a.getEgz();
+        nd.clear();
+        nd.shrink_to_fit();
+        nd.reserve(a.getNd().size());
+        for(int i : a.getNd()) 
+        {
+            nd.push_back(i);
+        }
+        return *this;
+    }
+    ~Studentas(){}
+    
     Studentas(std::string vardas, std::string pavarde, int egz, std::vector<int> nd);
     inline std::string getVardas() const { return vardas; }
     inline std::string getPavarde() const { return pavarde; }

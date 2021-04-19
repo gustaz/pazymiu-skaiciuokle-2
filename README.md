@@ -179,7 +179,7 @@ Dviejų konteinerių metodas išlošia priešingu atveju - kai laikas svarbu ir 
 | Class (-O2 vėliavėlė)                            | 0.012s     | 0.106s   | 1.009s    |  9.870s     |  98.795s     |
 | Class (-O3 vėliavėlė)                            | 0.012s     | 0.101s   | 1.078s    | 10.272s     | 100.138s     |
 	
-**IŠVADA** Greitis tarp mažų failų class realizacijoje buvo didesnis, o su didesniais failais - mažesnis. Tačiau tai buvo galima pastebėti tik be optimizacijos vėliavų - jas pritaikius class realizacija paspartėjo ir tapo greitesnė už struct realizaciją.
+**IŠVADA**: Greitis tarp mažų failų class realizacijoje buvo didesnis, o su didesniais failais - mažesnis. Tačiau tai buvo galima pastebėti tik be optimizacijos vėliavų - jas pritaikius class realizacija paspartėjo ir tapo greitesnė už struct realizaciją.
 ## Versijos
 * [v0.1](https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v0.1) Įgyvendintas esminis funkcionalumas
 * [v0.2](https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v0.2) Pridėta galimybė duomenis skaityti iš failo, duomenis rikiuoti
@@ -190,3 +190,5 @@ Dviejų konteinerių metodas išlošia priešingu atveju - kai laikas svarbu ir 
 * [v0.5](https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v0.5) Pridėtas funkcionalumas su deque ir list, perėjimas prie template funkcijų, pridėti paleidimo argumentai.
 * [v1.0.1](https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v1.0.1) Pridėtas dviejų algoritmų tikrinimas lyginant jų atminties ir laiko sąnaudas. Dėl atminties tikrinimo algoritmo, ši versija tinka tik Windows operacinę sistemą naudojantiems vartotojams.
 * [v1.0.2](https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v1.0.2) Programos optimizavimas taikant std::partition, įvairių spartos įvertinimų papildymas į .README, optimizacija, aptvarkymas, sugrįžimas prie daugiaplatformio suderinamumo ir kelių makefile sukūrimas.
+* [v1.1](https://github.com/gustaz/pazymiu-skaiciuokle-2/releases/tag/v1.1) Studentų struktūra pakeista į klasę, pridėti paleidimo laikai su optimizavimo vėliavėlemis.
+* [v1.1](https://github.com/gustaz/pazymiu-skaiciuokle-2/releases/tag/v1.2) Implementuotas „rule of three“ - destruktorius, copy konstruktorius bei copy assignment operatorius.
