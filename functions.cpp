@@ -4,7 +4,7 @@ void askForGeneration()
 {
 	char pasirinkimas;
 	std::ofstream output;
-	
+
 	generateDirectories("data");
 	generateDirectories("data/input");
 

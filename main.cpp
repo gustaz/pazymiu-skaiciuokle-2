@@ -2,9 +2,18 @@
 
 double accumulatedTime = 0;
 
+bool isKietiakas(const Studentas& a)
+{
+	return(a.getVid() >= 5.00);
+}
+
+bool surnameCompare(const Studentas& a, const Studentas& b)
+{
+	return(a.getPavarde() > b.getPavarde());
+}
+
 int main(int argc, char* argv[])
 {
-
 	std::chrono::steady_clock::time_point programStart = std::chrono::steady_clock::now();
 	std::cin.sync_with_stdio(false);
 	std::cout.sync_with_stdio(false);
@@ -69,12 +78,9 @@ int main(int argc, char* argv[])
 						std::cout << "Vykdomas studentu rusiavimas pagal galutini ivertinima." << std::endl;
 						clockStart = std::chrono::steady_clock::now();
 
-						auto it = std::partition(studentai.begin(), studentai.end(), isKietiakas());
-						std::vector<Studentas> vargsiukai(std::make_move_iterator(it), std::make_move_iterator(studentai.end()));
+						auto it = std::stable_partition(studentai.begin(), studentai.end(), isKietiakas);
+						std::vector<Studentas> vargsiukai(it, studentai.end());
 						studentai.erase(it, studentai.end());
-
-						sort(studentai.begin(), studentai.end(), compSurname());
-						sort(vargsiukai.begin(), vargsiukai.end(), compSurname());
 
 						std::cout << "Studentu rusiavimas truko: " << std::fixed << std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count() << "s" << std::endl;
 						benchmarkTime += std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count();
@@ -90,12 +96,9 @@ int main(int argc, char* argv[])
 						std::cout << "Vykdomas studentu rusiavimas pagal galutini ivertinima." << std::endl;
 						clockStart = std::chrono::steady_clock::now();
 
-						auto it = std::partition(studentai.begin(), studentai.end(), isKietiakas());
-						std::deque<Studentas> vargsiukai(std::make_move_iterator(it), std::make_move_iterator(studentai.end()));
+						auto it = std::stable_partition(studentai.begin(), studentai.end(), isKietiakas);
+						std::deque<Studentas> vargsiukai(it, studentai.end());
 						studentai.erase(it, studentai.end());
-
-						sort(studentai.begin(), studentai.end(), compSurname());
-						sort(vargsiukai.begin(), vargsiukai.end(), compSurname());
 
 						std::cout << "Studentu rusiavimas truko: " << std::fixed << std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count() << "s" << std::endl;
 						benchmarkTime += std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count();
@@ -110,12 +113,9 @@ int main(int argc, char* argv[])
 						std::cout << "Vykdomas studentu rusiavimas pagal galutini ivertinima." << std::endl;
 						clockStart = std::chrono::steady_clock::now();
 						
-						auto it = std::partition(studentai.begin(), studentai.end(), isKietiakas());
-						std::list<Studentas> vargsiukai (std::make_move_iterator(it), std::make_move_iterator(studentai.end()));
+						auto it = std::stable_partition(studentai.begin(), studentai.end(), isKietiakas);
+						std::list<Studentas> vargsiukai(it, studentai.end());
 						studentai.erase(it, studentai.end());
-
-						studentai.sort(compSurname());
-						vargsiukai.sort(compSurname());
 
 						std::cout << "Studentu rusiavimas truko: " << std::fixed << std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count() << "s" << std::endl;
 						benchmarkTime += std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count();
@@ -127,7 +127,7 @@ int main(int argc, char* argv[])
 			}
 		}
 	}
-	if(argc <= 1 || !isValid)
+	if (argc <= 1 || !isValid)
 	{
 		std::cout << "Nepasirinkti (teisingi) vykdymo argumentai programos paleidimo metu, todel pereinama prie iprastos veiklos. " << std::endl;
 		std::vector<Studentas> studentai;
@@ -152,7 +152,6 @@ int main(int argc, char* argv[])
 		{
 			readFromFile(studentai);
 			nuskaitytiDuomenys = true;
-
 		}
 		if (nuskaitytiDuomenys)
 		{
@@ -186,14 +185,14 @@ int main(int argc, char* argv[])
 		for (int i = 0; i < studentai.size(); i++)
 		{
 			double avg = 0;
-			for (int j = 0; j < studentai[i].nd.size(); j++)
+			for (int j = 0; j < studentai[i].getNd().size(); j++)
 			{
-				avg += studentai[i].nd[j];
+				avg += studentai[i].getNd().at(j);
 			}
-			avg /= studentai[i].nd.size();
-			studentai[i].galutinisVid = 0.4 * avg + 0.6 * studentai[i].egzaminas;
+			avg /= studentai[i].getNd().size();
+			studentai[i].setVid(0.4 * avg + 0.6 * studentai[i].getEgz());
 
-			studentai[i].galutinisMed = findMedian(studentai[i].nd, studentai[i].nd.size()) * 0.4 + studentai[i].egzaminas * 0.6;
+			studentai[i].setMed(findMedian(studentai[i].getNd(), studentai[i].getNd().size()) * 0.4 + studentai[i].getEgz() * 0.6);
 		}
 		std::cout << "Galutiniu ivertinimu skaiciavimas truko: " << std::fixed << std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count() << "s" << std::endl;
 		accumulatedTime += std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count();
@@ -229,7 +228,7 @@ int main(int argc, char* argv[])
 				clockStart = std::chrono::steady_clock::now();
 				for (int i = 0; i < studentai.size(); i++)
 				{
-					if (studentai[i].galutinisVid >= 5.00)
+					if (studentai[i].getVid() >= 5.00)
 						kietiakai.push_back(studentai[i]);
 					else
 						vargsiukai.push_back(studentai[i]);
@@ -256,7 +255,7 @@ int main(int argc, char* argv[])
 				clockStart = std::chrono::steady_clock::now();
 				for (int i = 0; i < studentai.size(); i++)
 				{
-					if (studentai[i].galutinisMed >= 5)
+					if (studentai[i].getMed() >= 5)
 						kietiakai.push_back(studentai[i]);
 					else
 						vargsiukai.push_back(studentai[i]);
@@ -282,7 +281,7 @@ int main(int argc, char* argv[])
 
 		if (tolower(pasirinkimas) == 'n' && !outputDone)
 		{
-			std::sort(studentai.begin(), studentai.end(), compSurname());
+			std::sort(studentai.begin(), studentai.end(), surnameCompare);
 			std::cout << "Pasirinkote paprasta isvesti i komandine eilute."
 				<< std::endl << "Ar norite, jog rezultate butu rodomas vidurkis? "
 				<< "Pasirinkus ne, bus rodoma mediana. (T/N): ";

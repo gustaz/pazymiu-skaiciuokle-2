@@ -7,7 +7,6 @@
 #include <string>
 #include <functional>
 #include <random>
-#include <vector>
 #include <algorithm>
 #include <chrono>
 #include <io.h>
@@ -15,6 +14,7 @@
 #include <list>
 #include <deque>
 #include <iterator>
+#include "studentas.h"
 
 #ifdef _WIN32
 #define WINPAUSE system("pause")
@@ -22,39 +22,6 @@
 
 static std::chrono::steady_clock::time_point clockStart;
 extern double accumulatedTime;
-
-struct Studentas 
-{
-	std::string vardas, pavarde;
-	std::vector<int> nd;
-	int egzaminas = 0;
-	double galutinisVid = 0;
-	double galutinisMed = 0;
-};
-
-struct compSurname
-{
-	inline bool operator() (const Studentas& struct1, const Studentas& struct2)
-	{
-		return (struct1.pavarde.compare(struct2.pavarde)) < 0;
-	}
-};
-
-struct compGrade
-{
-	inline bool operator() (const Studentas& struct1, const Studentas& struct2)
-	{
-		return (struct1.galutinisVid < struct2.galutinisVid);
-	}
-};
-
-struct isKietiakas
-{
-	inline bool operator() (const Studentas& struct1)
-	{
-		return (struct1.galutinisVid >= 5.00);
-	}
-};
 
 inline bool fileExists(const std::string& name) {
 	std::ifstream f(name.c_str());
@@ -70,9 +37,9 @@ auto static gradeGen = std::bind(std::uniform_int_distribution<int>(1, 10),
 
 void checkInput(int& skaicius, bool limited);
 void checkInput(char& ivestis);
-void askForGeneration();
 void generateFile(int numberOfStudents, std::ofstream& output);
 void generateDirectories(std::string directory);
+void askForGeneration();
 double findMedian(std::vector<int> grades, int n);
 
 template <class T>
@@ -157,20 +124,25 @@ void readFromFile(T& studentai)
 
 			std::stringstream stream(line);
 			std::vector<int> values;
-
-			int n;
+			int n = 0;
+			double avg = 0;
 			while (stream >> n)
 			{
 				values.push_back(n);
+				avg += n;
 			}
 
 			if (line.length() != 0)
 			{
+				avg -= n;
 				values.pop_back();
-				student.egzaminas = n;
-				student.nd = values;
-				student.vardas = vardas;
-				student.pavarde = pavarde;
+				avg /= values.size();
+				student.setEgz(n);
+				student.addNd(values);
+				student.setVid(0.4 * avg + 0.6 * student.getEgz());
+				student.setMed(findMedian(student.getNd(), student.getNd().size()) * 0.4 + student.getEgz() * 0.6);
+				student.setVardas(vardas);
+				student.setPavarde(pavarde);
 				studentai.push_back(student);
 			}
 		}
@@ -223,12 +195,12 @@ void readFromFileAutomated(T& studentai, int studentuSkaicius, std::ifstream& in
 				avg -= n;
 				values.pop_back();
 				avg /= values.size();
-				student.egzaminas = n;
-				student.nd = values;
-				student.galutinisVid = 0.4 * avg + 0.6 * student.egzaminas;
-				student.galutinisMed = findMedian(student.nd, student.nd.size()) * 0.4 + student.egzaminas * 0.6;
-				student.vardas = vardas;
-				student.pavarde = pavarde;
+				student.setEgz(n);
+				student.addNd(values);
+				student.setVid(0.4 * avg + 0.6 * student.getEgz());
+				student.setMed(findMedian(student.getNd(), student.getNd().size()) * 0.4 + student.getEgz() * 0.6);
+				student.setVardas(vardas);
+				student.setPavarde(pavarde);
 				studentai.push_back(student);
 			}
 		}
@@ -249,13 +221,17 @@ void inputStudent(T& studentai)
 	char pasirinkimas;
 	int n;
 
+	std::string input;
+
 	std::cout << "Iveskite studento varda: ";
-	getline(std::cin, stud.vardas);
+	getline(std::cin, input);
+	stud.setVardas(input);
 
 	std::cout << "Iveskite studento pavarde: ";
-	getline(std::cin, stud.pavarde);
+	getline(std::cin, input);
+	stud.setPavarde(input);
 
-	std::cout << "Pradedami ivesti studento " << stud.vardas << " " << stud.pavarde << " duomenys."
+	std::cout << "Pradedami ivesti studento " << stud.getVardas() << " " << stud.getPavarde() << " duomenys."
 		<< std::endl
 		<< "Ar zinomas tikslus atliktu namu darbu skaicius? (T/N): ";
 
@@ -281,18 +257,18 @@ void inputStudent(T& studentai)
 			std::cout << "Pasirinkta duomenis generuoti atsitiktine tvarka.";
 
 			for (int i = 0; i < n; i++)
-				stud.nd.push_back(gradeGen());
+				stud.addOneNd(gradeGen());
 
-			stud.egzaminas = gradeGen();
+			stud.setEgz(gradeGen());
 
 			std::cout << std::endl
 				<< "Gauti pazymiai: ";
-			for (int i = 0; i < stud.nd.size(); i++)
-				std::cout << stud.nd[i] << " ";
+			for (int i = 0; i < stud.getNd().size(); i++)
+				std::cout << stud.getNd().at(i) << " ";
 
 			std::cout << std::endl
 				<< "Gautas egzamino ivertinimas: "
-				<< stud.egzaminas
+				<< stud.getEgz()
 				<< std::endl;
 		}
 		else if (tolower(pasirinkimas) == 'n')
@@ -300,17 +276,19 @@ void inputStudent(T& studentai)
 			std::cout << "Pasirinktas duomenu ivedimas ranka." <<
 				std::endl;
 
+			int ivestis;
 			for (int i = 0; i < n; i++)
 			{
-				int ivestis;
+				
 				std::cout << "Iveskite " << i + 1 << "-aji pazymi: ";
 				std::cin >> ivestis;
 				checkInput(ivestis, true);
-				stud.nd.push_back(ivestis);
+				stud.addOneNd(ivestis);
 			}
 			std::cout << "Iveskite egzamino pazymi: ";
-			std::cin >> stud.egzaminas;
-			checkInput(stud.egzaminas, true);
+			std::cin >> ivestis;
+			checkInput(ivestis, true);
+			stud.setEgz(ivestis);
 
 			std::cout << "Baigtas duomenu ivedimas."
 				<< std::endl;
@@ -328,22 +306,23 @@ void inputStudent(T& studentai)
 		while (true)
 		{
 			int ivestis;
-			std::cout << "Iveskite " << stud.nd.size() + 1 << "-aji pazymi: ";
+			std::cout << "Iveskite " << stud.getNd().size() + 1 << "-aji pazymi: ";
 			std::cin >> ivestis;
 			checkInput(ivestis, true);
 
-			if (ivestis == 0 && stud.nd.size() > 0)
+			if (ivestis == 0 && stud.getNd().size() > 0)
 			{
 				std::cout << "Iveskite egzamino pazymi: ";
-				std::cin >> stud.egzaminas;
-				checkInput(stud.egzaminas, true);
+				std::cin >> ivestis;
+				checkInput(ivestis, true);
+				stud.setEgz(ivestis);
 				break;
 			}
-			else if (ivestis == 0 && stud.nd.size() == 0)
+			else if (ivestis == 0 && stud.getNd().size() == 0)
 				std::cout << "Studentas turi tureti bent viena pazymi!"
 				<< std::endl;
 
-			stud.nd.push_back(ivestis);
+			stud.addOneNd(ivestis);
 		}
 	}
 	studentai.push_back(stud);
@@ -362,9 +341,9 @@ void writeToConsoleAvg(T& studentai, std::ostream& out)
 	for (auto const& i : studentai)
 	{
 		out << std::left
-			<< std::setw(20) << i.pavarde
-			<< std::setw(15) << i.vardas
-			<< std::setw(15) << std::fixed << std::setprecision(2) << i.galutinisVid
+			<< std::setw(20) << i.getPavarde()
+			<< std::setw(15) << i.getVardas()
+			<< std::setw(15) << std::fixed << std::setprecision(2) << i.getVid()
 			<< "\n";
 	}
 }
@@ -382,9 +361,9 @@ void writeToConsoleMed(T& studentai, std::ostream& out)
 	for (auto const& i : studentai)
 	{
 		out << std::left
-			<< std::setw(20) << i.pavarde
-			<< std::setw(15) << i.vardas
-			<< std::setw(15) << std::fixed << std::setprecision(2) << i.galutinisMed
+			<< std::setw(20) << i.getPavarde()
+			<< std::setw(15) << i.getVardas()
+			<< std::setw(15) << std::fixed << std::setprecision(2) << i.getMed()
 			<< "\n";
 	}
 

@@ -167,7 +167,19 @@ Dviejų konteinerių metodas išlošia priešingu atveju - kai laikas svarbu ir 
 | Skirtumas palyginus su dviejų konteinerių metodu | -0.00102s  |  -0.002s |   -0.013s |    -0.149s  |     -4.01s   |
 
 **IŠVADA**: std::partition iš esmės programai suteikė spartą, kuri buvo gaunama naudojant du konteinerius ir suteikė tą patį atminties optimizuotumą, kaip ir vieno konteinerio metodas. Kai kuriais atvejais efektyvumas padidėjo netgi drastiškai, nes implementaicja pakeista iš template funkcijos, iteruojančios pro visą konteinerį, kuri buvo tam tikrais atvejais neefektyvi.
+
+## Spartos įvertinimas po struktūros pavertimo į klasę
+
+| ***Vector***                                     | 1 000      | 10 000   | 100 000   | 1 000 000   | 10 000 000   |
+| ------------------------------------------------ | ---------- | -------- | --------- | ----------- | ------------ |
+| **Laiko naudojimas**                             |            |          |           |             |              |
+| Struct realizacija                               | 0.018s     | 0.189s   | 1.812s    | 17.981s     | 210.624s     |
+| Class (Įprastas kompiliavimas)                   | 0.022s     | 0.235s   | 2.450s    | 17.145s     | 171.743s     |
+| Class (-O1 vėliavėlė)                            | 0.012s     | 0.115s   | 1.039s    | 11.155s     | 106.058s     |
+| Class (-O2 vėliavėlė)                            | 0.012s     | 0.106s   | 1.009s    |  9.870s     |  98.795s     |
+| Class (-O3 vėliavėlė)                            | 0.012s     | 0.101s   | 1.078s    | 10.272s     | 100.138s     |
 	
+**IŠVADA** Greitis tarp mažų failų class realizacijoje buvo didesnis, o su didesniais failais - mažesnis. Tačiau tai buvo galima pastebėti tik be optimizacijos vėliavų - jas pritaikius class realizacija paspartėjo ir tapo greitesnė už struct realizaciją.
 ## Versijos
 * [v0.1](https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v0.1) Įgyvendintas esminis funkcionalumas
 * [v0.2](https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v0.2) Pridėta galimybė duomenis skaityti iš failo, duomenis rikiuoti
