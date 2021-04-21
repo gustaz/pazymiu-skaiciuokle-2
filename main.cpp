@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 	std::chrono::steady_clock::time_point programStart = std::chrono::steady_clock::now();
 	std::cin.sync_with_stdio(false);
 	std::cout.sync_with_stdio(false);
-
+    
 	std::cout << "Atsakydami i programos uzduodamus klausimus rasykite raides T (-taip) arba N (-ne)."
 		<< std::endl;
 
@@ -27,8 +27,8 @@ int main(int argc, char* argv[])
 
 		if (isValid)
 		{
-			std::vector<int> studentuFailuDydziai = { 1000, 10000, 100000, 1000000, 10000000 };
-			//std::vector<int> studentuFailuDydziai = { 1000 };
+			//std::vector<int> studentuFailuDydziai = { 1000, 10000, 100000, 1000000, 10000000 };
+			std::vector<int> studentuFailuDydziai = { 1000 };
 			std::ofstream output;
 			std::ifstream input;
 
@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
 
 						std::cout << "Vykdomas studentu rusiavimas pagal galutini ivertinima." << std::endl;
 						clockStart = std::chrono::steady_clock::now();
-                        
+
 						auto it = std::stable_partition(studentai.begin(), studentai.end(), isKietiakas());
 						std::vector<Studentas> vargsiukai(std::make_move_iterator(it), std::make_move_iterator(studentai.end()));
 						studentai.erase(it, studentai.end());
