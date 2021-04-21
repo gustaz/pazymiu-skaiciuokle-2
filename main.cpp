@@ -2,6 +2,7 @@
 
 double accumulatedTime = 0;
 
+<<<<<<< HEAD
 struct isKietiakas
 {
 	bool operator()(const Studentas& a)
@@ -11,9 +12,11 @@ struct isKietiakas
 };
 
 
+=======
+>>>>>>> main
 bool surnameCompare(const Studentas& a, const Studentas& b)
 {
-	return(a.getPavarde() > b.getPavarde());
+	return(a.getPavarde() < b.getPavarde());
 }
 
 int main(int argc, char* argv[])
@@ -37,7 +40,7 @@ int main(int argc, char* argv[])
 		if (isValid)
 		{
 			std::vector<int> studentuFailuDydziai = { 1000, 10000, 100000, 1000000, 10000000 };
-			//std::vector<int> studentuFailuDydziai = { 1000, 10000, 100000 };
+			//std::vector<int> studentuFailuDydziai = { 1000 };
 			std::ofstream output;
 			std::ifstream input;
 
@@ -81,10 +84,15 @@ int main(int argc, char* argv[])
 
 						std::cout << "Vykdomas studentu rusiavimas pagal galutini ivertinima." << std::endl;
 						clockStart = std::chrono::steady_clock::now();
+<<<<<<< HEAD
 						
+=======
+                        
+>>>>>>> main
 						auto it = std::stable_partition(studentai.begin(), studentai.end(), isKietiakas());
 						std::vector<Studentas> vargsiukai(std::make_move_iterator(it), std::make_move_iterator(studentai.end()));
 						studentai.erase(it, studentai.end());
+						//std::sort(studentai.begin(), studentai.end(), surnameCompare);
 
 						std::cout << "Studentu rusiavimas truko: " << std::fixed << std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count() << "s" << std::endl;
 						benchmarkTime += std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count();
