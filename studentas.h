@@ -27,6 +27,8 @@ public:
         vardas = a.getVardas();
         pavarde = a.getPavarde();
         egz = a.getEgz();
+        vid = a.getVid();
+        med = a.getMed();
         nd.clear();
         nd.shrink_to_fit();
         nd.reserve(a.getNd().size());

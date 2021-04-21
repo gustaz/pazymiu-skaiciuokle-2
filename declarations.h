@@ -28,6 +28,15 @@ inline bool fileExists(const std::string& name) {
 	return f.good();
 }
 
+struct isKietiakas
+{
+	inline bool operator() (const Studentas& struct1)
+	{
+        double comp = struct1.getMed();
+		return (comp >= 5.00);
+	}
+};
+
 auto static nowForSeed = std::chrono::high_resolution_clock::now();
 auto static timeInMSForSeed = std::chrono::duration_cast<std::chrono::milliseconds>(nowForSeed.time_since_epoch()).count();
 
@@ -387,11 +396,11 @@ void thenPrint(T& studentai, T& vargsiukai, int studentuFailuDydziai, std::ofstr
 
 	std::string containerName = container;
 	output.open("data/output/kietiakai" + containerName + std::to_string(studentuFailuDydziai) + ".txt");
-	writeToConsoleAvg(studentai, output);
+	writeToConsoleMed(studentai, output);
 	output.close();
 
 	output.open("data/output/vargsiukai" + containerName + std::to_string(studentuFailuDydziai) + ".txt");
-	writeToConsoleAvg(vargsiukai, output);
+	writeToConsoleMed(vargsiukai, output);
 	output.close();
 
 	std::cout << "Isvestis truko: " << std::fixed << std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count() << "s" << std::endl;
@@ -399,6 +408,7 @@ void thenPrint(T& studentai, T& vargsiukai, int studentuFailuDydziai, std::ofstr
 	accumulatedTime += benchmarkTime;
 	std::cout << studentuFailuDydziai << " isvedimas is viso truko: " << benchmarkTime << " s" << std::endl;
 }
+
 void generationSequence(int studentuFailuDydziai, std::ofstream& output, double& benchmarkTime);
 
 #endif
