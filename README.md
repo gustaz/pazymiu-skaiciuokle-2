@@ -192,3 +192,4 @@ Dviejų konteinerių metodas išlošia priešingu atveju - kai laikas svarbu ir 
 * [v1.0.2](https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v1.0.2) Programos optimizavimas taikant std::partition, įvairių spartos įvertinimų papildymas į .README, optimizacija, aptvarkymas, sugrįžimas prie daugiaplatformio suderinamumo ir kelių makefile sukūrimas.
 * [v1.1](https://github.com/gustaz/pazymiu-skaiciuokle-2/releases/tag/v1.1) Studentų struktūra pakeista į klasę, pridėti paleidimo laikai su optimizavimo vėliavėlemis.
 * [v1.2](https://github.com/gustaz/pazymiu-skaiciuokle-2/releases/tag/v1.2) Implementuotas „rule of three“ - destruktorius, copy konstruktorius bei copy assignment operatorius.
+* [v1.2](https://github.com/gustaz/pazymiu-skaiciuokle-2/releases/tag/v1.5) Sukurta abstrakti bazinė klasė žmogus.
