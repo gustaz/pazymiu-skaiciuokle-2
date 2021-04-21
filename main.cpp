@@ -2,10 +2,14 @@
 
 double accumulatedTime = 0;
 
-bool isKietiakas(const Studentas& a)
+struct isKietiakas
 {
-	return(a.getVid() >= 5.00);
-}
+	bool operator()(const Studentas& a)
+	{
+		return(a.getVid() >= 5.00);
+	}
+};
+
 
 bool surnameCompare(const Studentas& a, const Studentas& b)
 {
@@ -17,11 +21,6 @@ int main(int argc, char* argv[])
 	std::chrono::steady_clock::time_point programStart = std::chrono::steady_clock::now();
 	std::cin.sync_with_stdio(false);
 	std::cout.sync_with_stdio(false);
-
-    Studentas patestavimui;
-    patestavimui.setVardas("Nukopintas");
-    Studentas baigtis = patestavimui;
-    std::cout << baigtis.getVardas() << std::endl;
 
 	std::cout << "Atsakydami i programos uzduodamus klausimus rasykite raides T (-taip) arba N (-ne)."
 		<< std::endl;
@@ -82,9 +81,9 @@ int main(int argc, char* argv[])
 
 						std::cout << "Vykdomas studentu rusiavimas pagal galutini ivertinima." << std::endl;
 						clockStart = std::chrono::steady_clock::now();
-
-						auto it = std::stable_partition(studentai.begin(), studentai.end(), isKietiakas);
-						std::vector<Studentas> vargsiukai(it, studentai.end());
+						
+						auto it = std::stable_partition(studentai.begin(), studentai.end(), isKietiakas());
+						std::vector<Studentas> vargsiukai(std::make_move_iterator(it), std::make_move_iterator(studentai.end()));
 						studentai.erase(it, studentai.end());
 
 						std::cout << "Studentu rusiavimas truko: " << std::fixed << std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count() << "s" << std::endl;
@@ -101,7 +100,7 @@ int main(int argc, char* argv[])
 						std::cout << "Vykdomas studentu rusiavimas pagal galutini ivertinima." << std::endl;
 						clockStart = std::chrono::steady_clock::now();
 
-						auto it = std::stable_partition(studentai.begin(), studentai.end(), isKietiakas);
+						auto it = std::stable_partition(studentai.begin(), studentai.end(), isKietiakas());
 						std::deque<Studentas> vargsiukai(it, studentai.end());
 						studentai.erase(it, studentai.end());
 
@@ -118,7 +117,7 @@ int main(int argc, char* argv[])
 						std::cout << "Vykdomas studentu rusiavimas pagal galutini ivertinima." << std::endl;
 						clockStart = std::chrono::steady_clock::now();
 						
-						auto it = std::stable_partition(studentai.begin(), studentai.end(), isKietiakas);
+						auto it = std::stable_partition(studentai.begin(), studentai.end(), isKietiakas());
 						std::list<Studentas> vargsiukai(it, studentai.end());
 						studentai.erase(it, studentai.end());
 
