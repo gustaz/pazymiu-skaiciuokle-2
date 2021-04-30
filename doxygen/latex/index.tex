@@ -1,0 +1,295 @@
+\label{index_md_C__Users_gusta_Desktop_VU_ISI_1_1_kursas_2_semestras_Objektinis_2_uzduotis_pazymiu_skaiciuokle_2_README}%
+\Hypertarget{index_md_C__Users_gusta_Desktop_VU_ISI_1_1_kursas_2_semestras_Objektinis_2_uzduotis_pazymiu_skaiciuokle_2_README}%
+ \hypertarget{index_autotoc_md1}{}\doxysection{Funkcijos}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Suteikia vartotojui galimybę pasirinkti tarp programos vykdymo įprasta tvarka ir programos vykdymo spartos tikrinimo tvarka;
+\item Generuoja įvestį, ją apdoroja, gali suskirstyti duotą įvestį pagal vidurkį į du atitinkamus išvesties failus;
+\item Pateikia veiksmų trukmės ataskaitas programą vykdant;
+\item Leidžia vartotojui įvesti studento vardą, pavardę;
+\item Duoda galimybę pasirinkti, ar žinomas atsiskaitytų namų darbų kiekis;
+\item Jei taip, leidžia pažymius įvesti arba sugeneruoti atsitiktinai;
+\item Jei ne, suteikia galimybę vartotojui pačiam įrašyti tiek įvertinimų, kiek jis nori.
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{Programos diegimas}\label{index_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item Parsisiųsti norimą programos versijos kodą iš releases;
+\item Kodą sukompiliuoti per komandinę eilutę arba pasirinktą IDE; Rankiniu būdu\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g++ main.cpp functions.cpp -\/o skaiciuokle}
+
+\end{DoxyCode}
+ Naudojant Makefile per Windows su mingw32-\/make\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mingw32-\/make -\/f MakeFileWin}
+
+\end{DoxyCode}
+ Naudojant Mac\+OS, Linux, ar kitą UNIX sistemą\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make -\/f MakeFile}
+
+\end{DoxyCode}
+ Naudojant CMake\+Lists.\+txt\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake .}
+\DoxyCodeLine{cmake -\/-\/build .}
+
+\end{DoxyCode}
+
+\item Gautą vykdomąjį failą paleisti\+:
+\begin{DoxyEnumerate}
+\item Naudojant paleidimo argumentus\+:
+\begin{DoxyEnumerate}
+\item vector -\/ Darbui su vector konteineriu;
+\item deque -\/ Darbui su deque konteineriu;
+\item list -\/ Darbui su list konteineriu;
+\item generate -\/ Failu sugeneravimui vykdyti;
+\end{DoxyEnumerate}
+\item Nenaudojant paleidimo argumentu programa pereis prie įprastines, ne spartos bandymams vykdyti, veiklos.
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md3}{}\doxysection{Programos naudojimas}\label{index_autotoc_md3}
+Naudojimo pavyzdys\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pazymiu-\/skaiciuokle generate vector deque }
+
+\end{DoxyCode}
+
+\begin{DoxyEnumerate}
+\item Paleidus vykdomąjį failą programa tikrina, ar yra paleidimo parametrai.
+\item Jei programa aptinka parametrus\+:
+\begin{DoxyEnumerate}
+\item Nieko toliau daryti nereikia, programa viską darys automatizuotai.
+\item Jei nebus aptikti duomenys ir atitinkami aplankalai, programa juos sugeneruos.
+\item Priklausomai nuo paleidimo parametrų, programa atliks veiksmus su vienu, dviem ar visais trim konteinerių tipais.
+\item Kiekvieno skirtingo konteinerio ir konteinerio dydžio vykdymo metu pateikiamos laiko ataskaitos, duomenys išvedami į failą.
+\end{DoxyEnumerate}
+\item Jei parametrai neįvedami, programa pereina prie įprastinės veiklos.
+\begin{DoxyEnumerate}
+\item Pasirinkus įprastinę tvarką leidžiama pasirinkti, ar norima generuoti duomenis.
+\item Vėliau leidžiama pasirinkti, ar vartotojas nori įvedimą daryti iš failo.
+\item Baigus ar nepasirinkus įvedimą iš failo taip pat galima pasirinkti ir įvedimą rankiniui būdu. Įvedus vardą, pavardę, duodama pasirinkti pažymių įvedimo būdą (generacija, įvedimas rankiniu būdu).
+\item Suvedus visus duomenis vartotojo paklausiama, ar jis nori pridėti dar vieną studentą. Jei taip, kartojami žingsniai 7-\/8.
+\item Jei ne, vartotojo paklausiama, ar jis nori išvestį išskirti į du failus.
+\item Pasirinkus taip, išvestis pateikiama dvejuose failuose, pagal pasirinkimą rodomas galutinis pažymys paskaičiuotas su vidurkiu arba mediana.
+\item Jei ne, išvestis vykdoma komandinėje eilutėje ir taip pat pagal pasirinkimą rodomas galutinis pažymys paskaičiuotas su vidurkiu arba mediana.
+\item Pagal atitinkamą vartotojo pasirinkimą parodoma lentelė komandinėje eilutėje arba pateikiama išvestis.
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md4}{}\doxysection{Spartos įvertinimas}\label{index_autotoc_md4}
+Kompiuterio parametrai\+: CPU\+: AMD Ryzen 5-\/3550H, 2.\+1\+GHz Quad-\/core. RAM\+: 16GB DDR4 2333MHz RAM. SSD\+: NVMe SSD.\hypertarget{index_autotoc_md5}{}\doxysubsection{Programos spartos įvertinimas iš pradžių taikyta strategija (dviejų konteinerių)}\label{index_autotoc_md5}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Vector}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Vector}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endhead
+Bendras vykdymo laikas   &0.\+050s   &0.\+191s   &1.\+732s   &18.\+523s   &191.\+880s    \\\cline{1-6}
+Nuskaitymas   &0.\+021s   &0.\+115s   &1.\+120s   &11.\+738s   &114.\+629s    \\\cline{1-6}
+Išrūšiavimas   &0.\+002s   &0.\+030s   &0.\+407s   &4.\+865s   &58.\+336s    \\\cline{1-6}
+Išvedimas   &0.\+026s   &0.\+044s   &0.\+204s   &1.\+919s   &18.\+882s   \\\cline{1-6}
+\end{longtabu}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Deque}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Deque}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endhead
+Bendras vykdymo laikas   &0.\+034s   &0.\+193s   &1.\+875s   &19.\+673s   &207.\+906s    \\\cline{1-6}
+Nuskaitymas   &0.\+011s   &0.\+112s   &1.\+181s   &11.\+435s   &114.\+040s    \\\cline{1-6}
+Išrūšiavimas   &0.\+003s   &0.\+040s   &0.\+487s   &6.\+255s   &74.\+644s    \\\cline{1-6}
+Išvedimas   &0.\+019s   &0.\+040s   &0.\+207s   &1.\+981s   &19.\+221s   \\\cline{1-6}
+\end{longtabu}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{List}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{List}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endhead
+Bendras vykdymo laikas   &0.\+034s   &0.\+169s   &1.\+616s   &16.\+964s   &180.\+331s    \\\cline{1-6}
+Nuskaitymas   &0.\+011s   &0.\+116s   &1.\+130s   &11.\+553s   &116.\+246s    \\\cline{1-6}
+Išrūšiavimas   &0.\+001s   &0.\+015s   &0.\+254s   &3.\+320s   &44.\+200s    \\\cline{1-6}
+Išvedimas   &0.\+020s   &0.\+037s   &0.\+230s   &2.\+090s   &19.\+883s   \\\cline{1-6}
+\end{longtabu}
+\hypertarget{index_autotoc_md6}{}\doxysubsection{Programoje esančių dviejų strategijų spartos tikrinimas}\label{index_autotoc_md6}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{Vector}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{Vector}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endhead
+{\bfseries{Atminties naudojimas}}   &&&&&\\\cline{1-6}
+Vieno konteinerio   &0.\+093\+MB   &0.\+136\+MB   &8.\+544\+MB   &83.\+756\+MB   &838.\+762\+MB    \\\cline{1-6}
+Dviejų konteinerių   &0.\+144\+MB   &3.\+525\+MB   &23.\+609\+MB   &263.\+655\+MB   &2297.\+112\+MB    \\\cline{1-6}
+Skirtumas   &0.\+051\+MB   &3.\+389\+MB   &15.\+065\+MB   &179.\+899\+MB   &1458.\+350\+MB    \\\cline{1-6}
+&&&&&\\\cline{1-6}
+{\bfseries{Laiko naudojimas}}   &&&&&\\\cline{1-6}
+Vieno konteinerio   &0.\+002s   &0.\+037s   &0.\+413s   &5.\+188s   &71.\+450s    \\\cline{1-6}
+Dviejų konteinerių   &0.\+001s   &0.\+032s   &0.\+302s   &3.\+918s   &43.\+976s    \\\cline{1-6}
+Skirtumas   &0.\+001s   &0.\+005s   &0.\+111s   &1.\+270s   &24.\+474s   \\\cline{1-6}
+\end{longtabu}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{Deque}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{Deque}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endhead
+{\bfseries{Atminties naudojimas}}   &&&&&\\\cline{1-6}
+Vieno konteinerio   &0.\+121\+MB   &0.\+625\+MB   &10.\+746\+MB   &88.\+343\+MB   &873.\+031\+MB    \\\cline{1-6}
+Dviejų konteinerių   &0.\+250\+MB   &2.\+125\+MB   &30.\+089\+MB   &218.\+039\+MB   &2120.\+707\+MB    \\\cline{1-6}
+Skirtumas   &0.\+129\+MB   &1.\+500\+MB   &19.\+343\+MB   &129.\+695\+MB   &1247.\+675\+MB    \\\cline{1-6}
+&&&&&\\\cline{1-6}
+{\bfseries{Laiko naudojimas}}   &&&&&\\\cline{1-6}
+Vieno konteinerio   &0.\+0023s   &0.\+057s   &0.\+719s   &6.\+222s   &79.\+265s    \\\cline{1-6}
+Dviejų konteinerių   &0.\+0028s   &0.\+043s   &0.\+653s   &5.\+669s   &72.\+471s    \\\cline{1-6}
+Skirtumas   &0.\+0005s   &0.\+014s   &0.\+066s   &0.\+553s   &6.\+794s   \\\cline{1-6}
+\end{longtabu}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{List}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{List}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endhead
+{\bfseries{Atminties naudojimas}}   &&&&&\\\cline{1-6}
+Vieno konteinerio   &0.\+101\+MB   &0.\+781\+MB   &10.\+539\+MB   &99.\+308\+MB   &977.\+425\+MB    \\\cline{1-6}
+Dviejų konteinerių   &0.\+242\+MB   &2.\+312\+MB   &24.\+750\+MB   &239.\+164\+MB   &2355.\+082\+MB    \\\cline{1-6}
+Skirtumas   &0.\+141\+MB   &1.\+531\+MB   &14.\+210\+MB   &139.\+855\+MB   &1377.\+656\+MB    \\\cline{1-6}
+&&&&&\\\cline{1-6}
+{\bfseries{Laiko naudojimas}}   &&&&&\\\cline{1-6}
+Vieno konteinerio   &0.\+0015s   &0.\+022s   &0.\+255s   &3.\+568s   &59.\+181s    \\\cline{1-6}
+Dviejų konteinerių   &0.\+0011s   &0.\+011s   &0.\+139s   &1.\+468s   &38.\+419s    \\\cline{1-6}
+Skirtumas   &0.\+0004s   &0.\+011s   &0.\+116s   &2.\+100s   &20.\+762s   \\\cline{1-6}
+\end{longtabu}
+
+
+{\bfseries{IŠ\+VADA}}\+: Vieno konteinerio metodas yra brangesnis laiko atžvilgiu, tačiau sunaudoja {\itshape žymiai} mažiau atminties. Atsižvelgus į poreikius vienas algoritmas už kitą pranašesnis.
+
+Vieno konteinerio metodas išlošia tada, kai laikas nėra svarbu, o atmintis -\/ ribota. Dviejų konteinerių metodas išlošia priešingu atveju -\/ kai laikas svarbu ir atmintis -\/ nėra ribota.\hypertarget{index_autotoc_md7}{}\doxysubsection{Po std\+::partition optimizacijos metodo pritaikymo vykdytas spartos tikrinimas}\label{index_autotoc_md7}
+{\itshape Jei prie skirtumo parašyta +, tai reiškia, jog pritaikytas optimizacijos metodas naudojo papildomai resursų.} {\itshape Jei prie skirtumo parašyta -\/, tai reiškia, jog pritaikytas optimizacijos metodas naudojo mažiau resursų.}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{Vector}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{Vector}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endhead
+{\bfseries{Atminties naudojimas}}   &&&&&\\\cline{1-6}
+Taikant std\+::partition   &0.\+046\+MB   &0.\+449\+MB   &4.\+472\+MB   &44.\+359\+MB   &443.\+621\+MB    \\\cline{1-6}
+Skirtumas palyginus su vieno konteinerio metodu   &-\/0.\+047\+MB   &+0.\+313\+MB   &-\/4.\+072\+MB   &-\/39.\+397\+MB   &-\/385.\+141\+MB    \\\cline{1-6}
+&&&&&\\\cline{1-6}
+{\bfseries{Laiko naudojimas}}   &&&&&\\\cline{1-6}
+Taikant std\+::partition   &0.\+001s   &0.\+019s   &0.\+223s   &2.\+851s   &30.\+798s    \\\cline{1-6}
+Skirtumas palyginus su dviejų konteinerių metodu   &0.\+000s   &-\/0.\+013s   &-\/0.\+079s   &-\/1.\+067s   &-\/13.\+178s   \\\cline{1-6}
+\end{longtabu}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{Deque}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{Deque}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endhead
+{\bfseries{Atminties naudojimas}}   &&&&&\\\cline{1-6}
+Taikant std\+::partition   &0.\+562\+MB   &0.\+515\+MB   &5.\+895\+MB   &39.\+382\+MB   &543.\+328\+MB    \\\cline{1-6}
+Skirtumas palyginus su vieno konteinerio metodu   &+0.\+441\+MB   &-\/0.\+110\+MB   &-\/4.\+851\+MB   &-\/48.\+961\+MB   &-\/329.\+703\+MB    \\\cline{1-6}
+&&&&&\\\cline{1-6}
+{\bfseries{Laiko naudojimas}}   &&&&&\\\cline{1-6}
+Taikant std\+::partition   &0.\+001s   &0.\+050s   &0.\+368s   &5.\+513s   &67.\+559s    \\\cline{1-6}
+Skirtumas palyginus su dviejų konteinerių metodu   &-\/0.\+001s   &+0.\+007s   &-\/0.\+285s   &-\/0.\+156s   &-\/4.\+912s   \\\cline{1-6}
+\end{longtabu}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{List}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{List}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endhead
+{\bfseries{Atminties naudojimas}}   &&&&&\\\cline{1-6}
+Taikant std\+::partition   &0.\+121\+MB   &0.\+750\+MB   &12.\+371\+MB   &50.\+433\+MB   &565.\+132\+MB    \\\cline{1-6}
+Skirtumas palyginus su vieno konteinerio metodu   &+0.\+020\+MB   &+0.\+031\+MB   &+1.\+832\+MB   &-\/48.\+875\+MB   &-\/412.\+293\+MB    \\\cline{1-6}
+&&&&&\\\cline{1-6}
+{\bfseries{Laiko naudojimas}}   &&&&&\\\cline{1-6}
+Taikant std\+::partition   &0.\+00008s   &0.\+009s   &0.\+126s   &1.\+319s   &34.\+409s    \\\cline{1-6}
+Skirtumas palyginus su dviejų konteinerių metodu   &-\/0.\+00102s   &-\/0.\+002s   &-\/0.\+013s   &-\/0.\+149s   &-\/4.\+01s   \\\cline{1-6}
+\end{longtabu}
+
+
+{\bfseries{IŠ\+VADA}}\+: std\+::partition iš esmės programai suteikė spartą, kuri buvo gaunama naudojant du konteinerius ir suteikė tą patį atminties optimizuotumą, kaip ir vieno konteinerio metodas. Kai kuriais atvejais efektyvumas padidėjo netgi drastiškai, nes implementaicja pakeista iš template funkcijos, iteruojančios pro visą konteinerį, kuri buvo tam tikrais atvejais neefektyvi.\hypertarget{index_autotoc_md8}{}\doxysection{Spartos įvertinimas po struktūros pavertimo į klasę}\label{index_autotoc_md8}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{6}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{Vector}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\itshape {\bfseries{Vector}}}   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 100 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 1 000 000   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 10 000 000    }\\\cline{1-6}
+\endhead
+{\bfseries{Laiko naudojimas}}   &&&&&\\\cline{1-6}
+Struct realizacija   &0.\+018s   &0.\+189s   &1.\+812s   &17.\+981s   &210.\+624s    \\\cline{1-6}
+Class (Įprastas kompiliavimas)   &0.\+022s   &0.\+235s   &2.\+450s   &17.\+145s   &171.\+743s    \\\cline{1-6}
+Class (-\/O1 vėliavėlė)   &0.\+012s   &0.\+115s   &1.\+039s   &11.\+155s   &106.\+058s    \\\cline{1-6}
+Class (-\/O2 vėliavėlė)   &0.\+012s   &0.\+106s   &1.\+009s   &9.\+870s   &98.\+795s    \\\cline{1-6}
+Class (-\/O3 vėliavėlė)   &0.\+012s   &0.\+101s   &1.\+078s   &10.\+272s   &100.\+138s   \\\cline{1-6}
+\end{longtabu}
+
+
+{\bfseries{IŠ\+VADA}}\+: Greitis tarp mažų failų class realizacijoje buvo didesnis, o su didesniais failais -\/ mažesnis. Tačiau tai buvo galima pastebėti tik be optimizacijos vėliavų -\/ jas pritaikius class realizacija paspartėjo ir tapo greitesnė už struct realizaciją. \hypertarget{index_autotoc_md9}{}\doxysection{Versijos}\label{index_autotoc_md9}
+
+\begin{DoxyItemize}
+\item \href{https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v0.1}{\texttt{ v0.\+1}} Įgyvendintas esminis funkcionalumas
+\item \href{https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v0.2}{\texttt{ v0.\+2}} Pridėta galimybė duomenis skaityti iš failo, duomenis rikiuoti
+\item \href{https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v0.3}{\texttt{ v0.\+3}} Programa išskaidyta į funckijų ir į pagrindinį failą, sukurtas antraščių failas, pridėtas klaidos išvedimas neradus failo.
+\item \href{https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v0.4}{\texttt{ v0.\+4}} Kodas optimizuotas, pridėtas studentų grupavimas į dvi kategorijas ir išvedimas į failus.
+\item \href{https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v0.4.1}{\texttt{ v0.\+4.\+1}} Pridėtas dar vienas skaičiavimų trukmės išvedimas, įvedimas ir išvedimas perkelti į subaplankalus tam, kad būtų palaikoma tvarka.
+\item \href{https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v0.4.2}{\texttt{ v0.\+4.\+2}} Pridėtas spartos tikrinimo kelias, kodo refaktorizacija ir optimizavimas.
+\item \href{https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v0.5}{\texttt{ v0.\+5}} Pridėtas funkcionalumas su deque ir list, perėjimas prie template funkcijų, pridėti paleidimo argumentai.
+\item \href{https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v1.0.1}{\texttt{ v1.\+0.\+1}} Pridėtas dviejų algoritmų tikrinimas lyginant jų atminties ir laiko sąnaudas. Dėl atminties tikrinimo algoritmo, ši versija tinka tik Windows operacinę sistemą naudojantiems vartotojams.
+\item \href{https://github.com/gustaz/Pazymys-skaiciuokle/releases/tag/v1.0.2}{\texttt{ v1.\+0.\+2}} Programos optimizavimas taikant std\+::partition, įvairių spartos įvertinimų papildymas į .README, optimizacija, aptvarkymas, sugrįžimas prie daugiaplatformio suderinamumo ir kelių makefile sukūrimas.
+\item \href{https://github.com/gustaz/pazymiu-skaiciuokle-2/releases/tag/v1.1}{\texttt{ v1.\+1}} Studentų struktūra pakeista į klasę, pridėti paleidimo laikai su optimizavimo vėliavėlemis.
+\item \href{https://github.com/gustaz/pazymiu-skaiciuokle-2/releases/tag/v1.2}{\texttt{ v1.\+2}} Implementuotas „rule of three“ -\/ destruktorius, copy konstruktorius bei copy assignment operatorius.
+\item \href{https://github.com/gustaz/pazymiu-skaiciuokle-2/releases/tag/v1.5}{\texttt{ v1.\+5}} Sukurta abstrakti bazinė klasė žmogus. 
+\end{DoxyItemize}

@@ -1,0 +1,444 @@
+\hypertarget{catch_8cpp}{}\doxysection{C\+:/\+Users/gusta/\+Desktop/\+VU ISI 1/1 kursas/2 semestras/\+Objektinis/2 uzduotis/pazymiu-\/skaiciuokle-\/2/catch.cpp File Reference}
+\label{catch_8cpp}\index{C:/Users/gusta/Desktop/VU ISI 1/1 kursas/2 semestras/Objektinis/2 uzduotis/pazymiu-\/skaiciuokle-\/2/catch.cpp@{C:/Users/gusta/Desktop/VU ISI 1/1 kursas/2 semestras/Objektinis/2 uzduotis/pazymiu-\/skaiciuokle-\/2/catch.cpp}}
+{\ttfamily \#include \char`\"{}catch\+\_\+amalgamated.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$cerrno$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+{\ttfamily \#include $<$cfloat$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_catch_1_1_benchmark_1_1_detail_1_1optimized__away__error}{Catch\+::\+Benchmark\+::\+Detail\+::optimized\+\_\+away\+\_\+error}}
+\item 
+class \mbox{\hyperlink{class_catch_1_1_context}{Catch\+::\+Context}}
+\item 
+struct \mbox{\hyperlink{struct_catch_1_1_generators_1_1_generator_tracker}{Catch\+::\+Generators\+::\+Generator\+Tracker}}
+\item 
+struct \mbox{\hyperlink{struct_catch_1_1_string_streams}{Catch\+::\+String\+Streams}}
+\item 
+class \mbox{\hyperlink{class_catch_1_1_table_printer}{Catch\+::\+Table\+Printer}}
+\item 
+struct \mbox{\hyperlink{struct_catch_1_1_summary_column}{Catch\+::\+Summary\+Column}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{catch_8cpp_af942e91344c728dbd8c9732dbf8054c9}\label{catch_8cpp_af942e91344c728dbd8c9732dbf8054c9}} 
+using {\bfseries Catch\+::\+Registry\+Hub\+Singleton} = Singleton$<$ Registry\+Hub, IRegistry\+Hub, IMutable\+Registry\+Hub $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{catch_8cpp_a65dcb4c6cc6803847848523398ae680c}\label{catch_8cpp_a65dcb4c6cc6803847848523398ae680c}} 
+enum class {\bfseries Floating\+Point\+Kind} \+: uint8\+\_\+t \{ {\bfseries Float}
+, {\bfseries Double}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{catch_8cpp_afc97f2c4454d38848a57445bcc3de5af}\label{catch_8cpp_afc97f2c4454d38848a57445bcc3de5af}} 
+double {\bfseries Catch\+::\+Benchmark\+::\+Detail\+::weighted\+\_\+average\+\_\+quantile} (int k, int q, std\+::vector$<$ double $>$\+::iterator first, std\+::vector$<$ double $>$\+::iterator last)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a62d6c634e2c8901d02ffe8718817f1b4}\label{catch_8cpp_a62d6c634e2c8901d02ffe8718817f1b4}} 
+double {\bfseries Catch\+::\+Benchmark\+::\+Detail\+::erfc\+\_\+inv} (double x)
+\item 
+\mbox{\Hypertarget{catch_8cpp_af3527090cdeb0456b1aacbdc29050841}\label{catch_8cpp_af3527090cdeb0456b1aacbdc29050841}} 
+double {\bfseries Catch\+::\+Benchmark\+::\+Detail\+::normal\+\_\+quantile} (double p)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ab7225b5a34d78c22bc5186297b68aa83}\label{catch_8cpp_ab7225b5a34d78c22bc5186297b68aa83}} 
+double {\bfseries Catch\+::\+Benchmark\+::\+Detail\+::outlier\+\_\+variance} (Estimate$<$ double $>$ mean, Estimate$<$ double $>$ stddev, int n)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a7ee9e4fb035c7f8fa1cbfd4c3cd6242d}\label{catch_8cpp_a7ee9e4fb035c7f8fa1cbfd4c3cd6242d}} 
+bootstrap\+\_\+analysis {\bfseries Catch\+::\+Benchmark\+::\+Detail\+::analyse\+\_\+samples} (double confidence\+\_\+level, int n\+\_\+resamples, std\+::vector$<$ double $>$\+::iterator first, std\+::vector$<$ double $>$\+::iterator last)
+\item 
+\mbox{\Hypertarget{catch_8cpp_accb97601fac7308aa9c11dcdb439ddb8}\label{catch_8cpp_accb97601fac7308aa9c11dcdb439ddb8}} 
+void {\bfseries Catch\+::\+Benchmark\+::\+Detail\+::throw\+\_\+optimized\+\_\+away\+\_\+error} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_aed9bf4d544c60a074440a055a54ea6c3}\label{catch_8cpp_aed9bf4d544c60a074440a055a54ea6c3}} 
+Approx {\bfseries Catch\+::literals\+::operator\char`\"{}\char`\"{}\+\_\+a} (long double val)
+\item 
+\mbox{\Hypertarget{catch_8cpp_aded81112b3a271a8b9538dff17acd093}\label{catch_8cpp_aded81112b3a271a8b9538dff17acd093}} 
+Approx {\bfseries Catch\+::literals\+::operator\char`\"{}\char`\"{}\+\_\+a} (unsigned long long val)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a5d328566cb8da87b48f1fac3f319ac7a}\label{catch_8cpp_a5d328566cb8da87b48f1fac3f319ac7a}} 
+IRegistry\+Hub const  \& {\bfseries Catch\+::get\+Registry\+Hub} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_a585459763f2c7610e57de2dd22dd1ad8}\label{catch_8cpp_a585459763f2c7610e57de2dd22dd1ad8}} 
+IMutable\+Registry\+Hub \& {\bfseries Catch\+::get\+Mutable\+Registry\+Hub} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_a0f78e9afdebc6d4512d18e76fbf54b8c}\label{catch_8cpp_a0f78e9afdebc6d4512d18e76fbf54b8c}} 
+void {\bfseries Catch\+::clean\+Up} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_adafff91485eeeeb9e9333f317cc0e3b1}\label{catch_8cpp_adafff91485eeeeb9e9333f317cc0e3b1}} 
+std\+::string {\bfseries Catch\+::translate\+Active\+Exception} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_ab37a723060277c3f6659cb9759a5ed19}\label{catch_8cpp_ab37a723060277c3f6659cb9759a5ed19}} 
+Detail\+::unique\+\_\+ptr$<$ Test\+Case\+Info $>$ {\bfseries Catch\+::make\+Test\+Case\+Info} (std\+::string const \&\+\_\+class\+Name, Name\+And\+Tags const \&name\+And\+Tags, Source\+Line\+Info const \&\+\_\+line\+Info)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a98d058468488c486a9cb5c8463f3ba29}\label{catch_8cpp_a98d058468488c486a9cb5c8463f3ba29}} 
+auto {\bfseries Catch\+::get\+Current\+Nanoseconds\+Since\+Epoch} () -\/$>$ uint64\+\_\+t
+\item 
+\mbox{\Hypertarget{catch_8cpp_ac8e1ed37624bd0d97b2c0d4ec099d31f}\label{catch_8cpp_ac8e1ed37624bd0d97b2c0d4ec099d31f}} 
+auto {\bfseries Catch\+::get\+Estimated\+Clock\+Resolution} () -\/$>$ uint64\+\_\+t
+\item 
+\mbox{\Hypertarget{catch_8cpp_ac5d6c510e565ee5bddcc2236194ce29e}\label{catch_8cpp_ac5d6c510e565ee5bddcc2236194ce29e}} 
+std\+::string {\bfseries Catch\+::\+Detail\+::raw\+Memory\+To\+String} (const void $\ast$object, std\+::size\+\_\+t size)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ad8d1dad0c4e68e8cfad25474ca926c66}\label{catch_8cpp_ad8d1dad0c4e68e8cfad25474ca926c66}} 
+std\+::ostream \& {\bfseries Catch\+::operator$<$$<$} (std\+::ostream \&os, Version const \&version)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a1447a30ad1661c5fb0d32cfa67f6ac0c}\label{catch_8cpp_a1447a30ad1661c5fb0d32cfa67f6ac0c}} 
+Version const  \& {\bfseries Catch\+::library\+Version} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_ab6e4736f7a2b0501a13c4dc4adfe5bb6}\label{catch_8cpp_ab6e4736f7a2b0501a13c4dc4adfe5bb6}} 
+void {\bfseries Catch\+::\+Generators\+::\+Detail\+::throw\+\_\+generator\+\_\+exception} (char const $\ast$msg)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ac1fe3550c5f97370fc6729e04d7571b8}\label{catch_8cpp_ac1fe3550c5f97370fc6729e04d7571b8}} 
+auto {\bfseries Catch\+::\+Generators\+::acquire\+Generator\+Tracker} (String\+Ref generator\+Name, Source\+Line\+Info const \&line\+Info) -\/$>$ IGenerator\+Tracker \&
+\item 
+\mbox{\Hypertarget{catch_8cpp_aea6f8ff3b3838829d4a61694e4bc41ca}\label{catch_8cpp_aea6f8ff3b3838829d4a61694e4bc41ca}} 
+void {\bfseries Catch\+::handle\+Exception\+Match\+Expr} (Assertion\+Handler \&handler, std\+::string const \&str, String\+Ref const \&matcher\+String)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ab5b76a1843c33a4a71aa698a3defc528}\label{catch_8cpp_ab5b76a1843c33a4a71aa698a3defc528}} 
+Parser\+Result {\bfseries Catch\+::\+Clara\+::\+Detail\+::convert\+Into} (std\+::string const \&source, std\+::string \&target)
+\item 
+\mbox{\Hypertarget{catch_8cpp_aaf5cc67b22b463d47af6e69ee31bf44e}\label{catch_8cpp_aaf5cc67b22b463d47af6e69ee31bf44e}} 
+Parser\+Result {\bfseries Catch\+::\+Clara\+::\+Detail\+::convert\+Into} (std\+::string const \&source, bool \&target)
+\item 
+\mbox{\Hypertarget{catch_8cpp_aff37796f0f578c2816f74267e641c5f7}\label{catch_8cpp_aff37796f0f578c2816f74267e641c5f7}} 
+bool {\bfseries Catch\+::isnan} (float f)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a37d450336c237ac77721f0a3f9fb048d}\label{catch_8cpp_a37d450336c237ac77721f0a3f9fb048d}} 
+bool {\bfseries Catch\+::isnan} (double d)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a4b5a2b34a00e65b753185bbc6a4962be}\label{catch_8cpp_a4b5a2b34a00e65b753185bbc6a4962be}} 
+bool {\bfseries Catch\+::uncaught\+\_\+exceptions} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_a520110c31f26cf9892595772ab814fc0}\label{catch_8cpp_a520110c31f26cf9892595772ab814fc0}} 
+void {\bfseries Catch\+::format\+Reconstructed\+Expression} (std\+::ostream \&os, std\+::string const \&lhs, String\+Ref op, std\+::string const \&rhs)
+\item 
+\mbox{\Hypertarget{catch_8cpp_abf821d46e662c8d93d80a98d79a10314}\label{catch_8cpp_abf821d46e662c8d93d80a98d79a10314}} 
+auto {\bfseries Catch\+::operator$<$$<$} (std\+::ostream \&os, Lazy\+Expression const \&lazy\+Expr) -\/$>$ std\+::ostream \&
+\item 
+\mbox{\Hypertarget{catch_8cpp_a96d773398ae9697da7845bbf5027e35e}\label{catch_8cpp_a96d773398ae9697da7845bbf5027e35e}} 
+Clara\+::\+Parser {\bfseries Catch\+::make\+Command\+Line\+Parser} (Config\+Data \&config)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a8c8ea1f66bc1cdc3e1254ed7fa57c06d}\label{catch_8cpp_a8c8ea1f66bc1cdc3e1254ed7fa57c06d}} 
+std\+::ostream \& {\bfseries Catch\+::operator$<$$<$} (std\+::ostream \&os, Source\+Line\+Info const \&info)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a7ef68dc79c8050859bea537a67b37fdb}\label{catch_8cpp_a7ef68dc79c8050859bea537a67b37fdb}} 
+std\+::ostream \& {\bfseries Catch\+::operator$<$$<$} (std\+::ostream \&os, Colour const \&)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ae50508f10ffc4ed873a31a4db4caea16}\label{catch_8cpp_ae50508f10ffc4ed873a31a4db4caea16}} 
+void {\bfseries Catch\+::clean\+Up\+Context} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_a66ea553511cbbc59d99e1720d8da514e}\label{catch_8cpp_a66ea553511cbbc59d99e1720d8da514e}} 
+Simple\+Pcg32 \& {\bfseries Catch\+::rng} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_aa5dcf4750ce9a854f4b74d3c952d13cc}\label{catch_8cpp_aa5dcf4750ce9a854f4b74d3c952d13cc}} 
+void {\bfseries Catch\+::write\+To\+Debug\+Console} (std\+::string const \&text)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ab079497368fb1df25af39ad494d2a241}\label{catch_8cpp_ab079497368fb1df25af39ad494d2a241}} 
+bool {\bfseries Catch\+::is\+Debugger\+Active} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_a707884e681203fef6bf7dbf752532fa5}\label{catch_8cpp_a707884e681203fef6bf7dbf752532fa5}} 
+void {\bfseries Catch\+::throw\+\_\+logic\+\_\+error} (std\+::string const \&msg)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ae67297c3e265b0fcd55de371bf408e4e}\label{catch_8cpp_ae67297c3e265b0fcd55de371bf408e4e}} 
+void {\bfseries Catch\+::throw\+\_\+domain\+\_\+error} (std\+::string const \&msg)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a48d2c35022dd9d56a1b7ee78ad581eea}\label{catch_8cpp_a48d2c35022dd9d56a1b7ee78ad581eea}} 
+void {\bfseries Catch\+::throw\+\_\+runtime\+\_\+error} (std\+::string const \&msg)
+\item 
+\mbox{\Hypertarget{catch_8cpp_abbb7ecb60e88a170d6250ba7bc30aaa7}\label{catch_8cpp_abbb7ecb60e88a170d6250ba7bc30aaa7}} 
+std\+::vector$<$ String\+Ref $>$ {\bfseries Catch\+::\+Detail\+::parse\+Enums} (String\+Ref enums)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ae6dc4662d8d2e53501839dfae571fa6f}\label{catch_8cpp_ae6dc4662d8d2e53501839dfae571fa6f}} 
+Catch\+::\+Detail\+::unique\+\_\+ptr$<$ Enum\+Info $>$ {\bfseries Catch\+::\+Detail\+::make\+Enum\+Info} (String\+Ref enum\+Name, String\+Ref all\+Value\+Names, std\+::vector$<$ int $>$ const \&values)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ad4d8c796a66797bbb1d050dab77fe1e2}\label{catch_8cpp_ad4d8c796a66797bbb1d050dab77fe1e2}} 
+bool {\bfseries Catch\+::list} (IStreaming\+Reporter \&reporter, Config const \&config)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{catch_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{catch_8cpp_a6d5126d3ec2d72a47fa404b704d99010}\label{catch_8cpp_a6d5126d3ec2d72a47fa404b704d99010}} 
+bool {\bfseries Catch\+::operator==} (Simple\+Pcg32 const \&lhs, Simple\+Pcg32 const \&rhs)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ab5a7a360e947e33298ee18f652749230}\label{catch_8cpp_ab5a7a360e947e33298ee18f652749230}} 
+bool {\bfseries Catch\+::operator!=} (Simple\+Pcg32 const \&lhs, Simple\+Pcg32 const \&rhs)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a5205869c81c06d3460759cb86676ae68}\label{catch_8cpp_a5205869c81c06d3460759cb86676ae68}} 
+bool {\bfseries Catch\+::is\+Ok} (Result\+Was\+::\+Of\+Type result\+Type)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a54b01af61673a3e1f21f31713639b180}\label{catch_8cpp_a54b01af61673a3e1f21f31713639b180}} 
+bool {\bfseries Catch\+::is\+Just\+Info} (int flags)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ab32a083e442cc09f736327d2e2865999}\label{catch_8cpp_ab32a083e442cc09f736327d2e2865999}} 
+Result\+Disposition\+::\+Flags {\bfseries Catch\+::operator$\vert$} (Result\+Disposition\+::\+Flags lhs, Result\+Disposition\+::\+Flags rhs)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a7f7480b15d74965459c844f0d393ed87}\label{catch_8cpp_a7f7480b15d74965459c844f0d393ed87}} 
+bool {\bfseries Catch\+::should\+Continue\+On\+Failure} (int flags)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ab91eb13081203d634fe48d3d2ab386d7}\label{catch_8cpp_ab91eb13081203d634fe48d3d2ab386d7}} 
+bool {\bfseries Catch\+::should\+Suppress\+Failure} (int flags)
+\item 
+\mbox{\Hypertarget{catch_8cpp_af718eeab870712f292ed8dc6ee3f6488}\label{catch_8cpp_af718eeab870712f292ed8dc6ee3f6488}} 
+IResult\+Capture \& {\bfseries Catch\+::get\+Result\+Capture} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_a161400810eb0995394d6d8d3cae821ad}\label{catch_8cpp_a161400810eb0995394d6d8d3cae821ad}} 
+void {\bfseries Catch\+::seed\+Rng} (IConfig const \&config)
+\item 
+\mbox{\Hypertarget{catch_8cpp_acf5ea05e942d2d7fe79111e12754ed76}\label{catch_8cpp_acf5ea05e942d2d7fe79111e12754ed76}} 
+unsigned int {\bfseries Catch\+::rng\+Seed} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_a788ebefcd83342b7c479222a1eeffaee}\label{catch_8cpp_a788ebefcd83342b7c479222a1eeffaee}} 
+void {\bfseries Catch\+::add\+Singleton} (ISingleton $\ast$singleton)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a8bdb92cb53a4e016bc0dee66efd99118}\label{catch_8cpp_a8bdb92cb53a4e016bc0dee66efd99118}} 
+void {\bfseries Catch\+::cleanup\+Singletons} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_af6d27462573d60c30c51acf1c980e3ff}\label{catch_8cpp_af6d27462573d60c30c51acf1c980e3ff}} 
+auto {\bfseries Catch\+::make\+Stream} (String\+Ref const \&filename) -\/$>$ IStream const $\ast$
+\item 
+\mbox{\Hypertarget{catch_8cpp_a0179d453617ba2296f2baa99a49e7264}\label{catch_8cpp_a0179d453617ba2296f2baa99a49e7264}} 
+std\+::ostream \& {\bfseries Catch\+::cout} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_a54c1ce08041448d684ae8edc14162cd2}\label{catch_8cpp_a54c1ce08041448d684ae8edc14162cd2}} 
+std\+::ostream \& {\bfseries Catch\+::cerr} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_a1b2213f54e4d31a659db49827e81856b}\label{catch_8cpp_a1b2213f54e4d31a659db49827e81856b}} 
+std\+::ostream \& {\bfseries Catch\+::clog} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_a695f62327be0676e046291eeaae15110}\label{catch_8cpp_a695f62327be0676e046291eeaae15110}} 
+bool {\bfseries Catch\+::starts\+With} (std\+::string const \&s, std\+::string const \&prefix)
+\item 
+\mbox{\Hypertarget{catch_8cpp_acad23751846ac23d0f379e34f5adebb1}\label{catch_8cpp_acad23751846ac23d0f379e34f5adebb1}} 
+bool {\bfseries Catch\+::starts\+With} (std\+::string const \&s, char prefix)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ada025504f627feaf9ac68ca391515dff}\label{catch_8cpp_ada025504f627feaf9ac68ca391515dff}} 
+bool {\bfseries Catch\+::ends\+With} (std\+::string const \&s, std\+::string const \&suffix)
+\item 
+\mbox{\Hypertarget{catch_8cpp_afd801a3e33fd7a8b91ded0d02747a93f}\label{catch_8cpp_afd801a3e33fd7a8b91ded0d02747a93f}} 
+bool {\bfseries Catch\+::ends\+With} (std\+::string const \&s, char suffix)
+\item 
+\mbox{\Hypertarget{catch_8cpp_aa52974b0e426e7e2fbd725a900e9c36e}\label{catch_8cpp_aa52974b0e426e7e2fbd725a900e9c36e}} 
+bool {\bfseries Catch\+::contains} (std\+::string const \&s, std\+::string const \&infix)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a0760dbe87d090a55a35414db57d272c4}\label{catch_8cpp_a0760dbe87d090a55a35414db57d272c4}} 
+void {\bfseries Catch\+::to\+Lower\+In\+Place} (std\+::string \&s)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ac036a17412d318598ffda8e1fe7a1177}\label{catch_8cpp_ac036a17412d318598ffda8e1fe7a1177}} 
+std\+::string {\bfseries Catch\+::to\+Lower} (std\+::string const \&s)
+\item 
+\mbox{\Hypertarget{catch_8cpp_aea28035c2fa625ced568c1765e82a3bc}\label{catch_8cpp_aea28035c2fa625ced568c1765e82a3bc}} 
+std\+::string \mbox{\hyperlink{catch_8cpp_aea28035c2fa625ced568c1765e82a3bc}{Catch\+::trim}} (std\+::string const  \&str)
+\begin{DoxyCompactList}\small\item\em Returns a new string without whitespace at the start/end. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{catch_8cpp_a6f6d8ef0349688290bd242b50a702c28}\label{catch_8cpp_a6f6d8ef0349688290bd242b50a702c28}} 
+String\+Ref \mbox{\hyperlink{catch_8cpp_a6f6d8ef0349688290bd242b50a702c28}{Catch\+::trim}} (String\+Ref ref)
+\begin{DoxyCompactList}\small\item\em Returns a substring of the original ref without whitespace. Beware lifetimes! \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{catch_8cpp_afe4e6770da547e43e9e4eeaa05f946ea}\label{catch_8cpp_afe4e6770da547e43e9e4eeaa05f946ea}} 
+bool {\bfseries Catch\+::replace\+In\+Place} (std\+::string \&str, std\+::string const \&replace\+This, std\+::string const \&with\+This)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a678e3c779388970bb3ec5802245f93d7}\label{catch_8cpp_a678e3c779388970bb3ec5802245f93d7}} 
+std\+::vector$<$ String\+Ref $>$ {\bfseries Catch\+::split\+String\+Ref} (String\+Ref str, char delimiter)
+\item 
+\mbox{\Hypertarget{catch_8cpp_aeaa8134e5f71f590c3100a1c5aeacd1e}\label{catch_8cpp_aeaa8134e5f71f590c3100a1c5aeacd1e}} 
+std\+::ostream \& {\bfseries Catch\+::operator$<$$<$} (std\+::ostream \&os, pluralise const \&pluraliser)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a821e202f593832c3196d204842e8174a}\label{catch_8cpp_a821e202f593832c3196d204842e8174a}} 
+auto {\bfseries Catch\+::operator$<$$<$} (std\+::ostream \&os, String\+Ref const \&str) -\/$>$ std\+::ostream \&
+\item 
+\mbox{\Hypertarget{catch_8cpp_ae053e7e198e60bf45f2b8bc51050f5f4}\label{catch_8cpp_ae053e7e198e60bf45f2b8bc51050f5f4}} 
+std\+::string {\bfseries Catch\+::operator+} (String\+Ref lhs, String\+Ref rhs)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a7209c96e886c406e1fcaff562c20311b}\label{catch_8cpp_a7209c96e886c406e1fcaff562c20311b}} 
+auto {\bfseries Catch\+::operator+=} (std\+::string \&lhs, String\+Ref const \&rhs) -\/$>$ std\+::string \&
+\item 
+\mbox{\Hypertarget{catch_8cpp_a7962dcd46023b5430e4e9ec36cbfe770}\label{catch_8cpp_a7962dcd46023b5430e4e9ec36cbfe770}} 
+std\+::vector$<$ Test\+Case\+Handle $>$ {\bfseries Catch\+::sort\+Tests} (IConfig const \&config, std\+::vector$<$ Test\+Case\+Handle $>$ const \&unsorted\+Test\+Cases)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a12f76a88f2882e9d1d221979dec0324d}\label{catch_8cpp_a12f76a88f2882e9d1d221979dec0324d}} 
+bool {\bfseries Catch\+::is\+Throw\+Safe} (Test\+Case\+Handle const \&test\+Case, IConfig const \&config)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a1df245a838b9ee9d81e6ee76bfba4b1a}\label{catch_8cpp_a1df245a838b9ee9d81e6ee76bfba4b1a}} 
+bool {\bfseries Catch\+::match\+Test} (Test\+Case\+Handle const \&test\+Case, Test\+Spec const \&test\+Spec, IConfig const \&config)
+\item 
+\mbox{\Hypertarget{catch_8cpp_aeb3a200328137e1cc8bb32c5b025ebdc}\label{catch_8cpp_aeb3a200328137e1cc8bb32c5b025ebdc}} 
+void {\bfseries Catch\+::enforce\+No\+Duplicate\+Test\+Cases} (std\+::vector$<$ Test\+Case\+Handle $>$ const \&functions)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ac959c3379d7fe790a9573fdd1d1fe883}\label{catch_8cpp_ac959c3379d7fe790a9573fdd1d1fe883}} 
+std\+::vector$<$ Test\+Case\+Handle $>$ {\bfseries Catch\+::filter\+Tests} (std\+::vector$<$ Test\+Case\+Handle $>$ const \&test\+Cases, Test\+Spec const \&test\+Spec, IConfig const \&config)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a97039bab95e97f059410f67425f1f2da}\label{catch_8cpp_a97039bab95e97f059410f67425f1f2da}} 
+std\+::vector$<$ Test\+Case\+Handle $>$ const  \& {\bfseries Catch\+::get\+All\+Test\+Cases\+Sorted} (IConfig const \&config)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a9e1cbffd90354d851c4ba6dff1e09fd7}\label{catch_8cpp_a9e1cbffd90354d851c4ba6dff1e09fd7}} 
+std\+::string {\bfseries Catch\+::extract\+Class\+Name} (String\+Ref const \&class\+Or\+Qualified\+Method\+Name)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a489d37d044a8384294388bf393bfeae0}\label{catch_8cpp_a489d37d044a8384294388bf393bfeae0}} 
+Detail\+::unique\+\_\+ptr$<$ ITest\+Invoker $>$ {\bfseries Catch\+::make\+Test\+Invoker} (void($\ast$test\+As\+Function)())
+\item 
+\mbox{\Hypertarget{catch_8cpp_a30373cc449e9c2fb629ef8a0df323cdd}\label{catch_8cpp_a30373cc449e9c2fb629ef8a0df323cdd}} 
+Test\+Spec {\bfseries Catch\+::parse\+Test\+Spec} (std\+::string const \&arg)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a23f10765dcc7cbca05e3ca4f4008b4cd}\label{catch_8cpp_a23f10765dcc7cbca05e3ca4f4008b4cd}} 
+std\+::ostream \& {\bfseries Catch\+::\+Text\+Flow\+::operator$<$$<$} (std\+::ostream \&os, Column const \&col)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a24f631f4606e5664e764e6a6b9df5c04}\label{catch_8cpp_a24f631f4606e5664e764e6a6b9df5c04}} 
+Column {\bfseries Catch\+::\+Text\+Flow\+::\+Spacer} (size\+\_\+t space\+Width)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a557f0cad86ac5038f73f8e4c28979037}\label{catch_8cpp_a557f0cad86ac5038f73f8e4c28979037}} 
+std\+::ostream \& {\bfseries Catch\+::\+Text\+Flow\+::operator$<$$<$} (std\+::ostream \&os, Columns const \&cols)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ae7c1b9d4303677f5326cc121c83703df}\label{catch_8cpp_ae7c1b9d4303677f5326cc121c83703df}} 
+Xml\+Formatting {\bfseries Catch\+::operator$\vert$} (Xml\+Formatting lhs, Xml\+Formatting rhs)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a5fe56089298472584786c12b6ba9910c}\label{catch_8cpp_a5fe56089298472584786c12b6ba9910c}} 
+Xml\+Formatting {\bfseries Catch\+::operator\&} (Xml\+Formatting lhs, Xml\+Formatting rhs)
+\item 
+\mbox{\Hypertarget{catch_8cpp_abe69c3e0a814ab97e0c4c1aab3fb304b}\label{catch_8cpp_abe69c3e0a814ab97e0c4c1aab3fb304b}} 
+std\+::ostream \& {\bfseries Catch\+::operator$<$$<$} (std\+::ostream \&os, Xml\+Encode const \&xml\+Encode)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ae77e233c3ed735ea12b7c726153798d1}\label{catch_8cpp_ae77e233c3ed735ea12b7c726153798d1}} 
+Within\+Ulps\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Within\+ULP} (double target, uint64\+\_\+t max\+Ulp\+Diff)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a5d108ff6aaeac40f20f4978dfb3f51fc}\label{catch_8cpp_a5d108ff6aaeac40f20f4978dfb3f51fc}} 
+Within\+Ulps\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Within\+ULP} (float target, uint64\+\_\+t max\+Ulp\+Diff)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a4c9ea76d47d02de0cf2d354c87c26e95}\label{catch_8cpp_a4c9ea76d47d02de0cf2d354c87c26e95}} 
+Within\+Abs\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Within\+Abs} (double target, double margin)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a0c559d9cfda02a81941ad6933f4ca450}\label{catch_8cpp_a0c559d9cfda02a81941ad6933f4ca450}} 
+Within\+Rel\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Within\+Rel} (double target, double eps)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a46e2f1efab13b85e2cbe36958a27d518}\label{catch_8cpp_a46e2f1efab13b85e2cbe36958a27d518}} 
+Within\+Rel\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Within\+Rel} (double target)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a494b4c8c68ac883e29dc35da71a4cd72}\label{catch_8cpp_a494b4c8c68ac883e29dc35da71a4cd72}} 
+Within\+Rel\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Within\+Rel} (float target, float eps)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a18cfb571dd191377674bad0cbb50078e}\label{catch_8cpp_a18cfb571dd191377674bad0cbb50078e}} 
+Within\+Rel\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Within\+Rel} (float target)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ae584743abef84739c036faf46eef53b7}\label{catch_8cpp_ae584743abef84739c036faf46eef53b7}} 
+String\+Equals\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Equals} (std\+::string const \&str, Case\+Sensitive case\+Sensitivity)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a8cf412cb36ff72734fc8808707223252}\label{catch_8cpp_a8cf412cb36ff72734fc8808707223252}} 
+String\+Contains\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Contains} (std\+::string const \&str, Case\+Sensitive case\+Sensitivity)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a12b1480cb0af61579e8776cf538d0069}\label{catch_8cpp_a12b1480cb0af61579e8776cf538d0069}} 
+Ends\+With\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Ends\+With} (std\+::string const \&str, Case\+Sensitive case\+Sensitivity)
+\item 
+\mbox{\Hypertarget{catch_8cpp_af3c7edfbfb4cba59f76578304597e548}\label{catch_8cpp_af3c7edfbfb4cba59f76578304597e548}} 
+Starts\+With\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Starts\+With} (std\+::string const \&str, Case\+Sensitive case\+Sensitivity)
+\item 
+\mbox{\Hypertarget{catch_8cpp_af4de9d3e501b83d17a048cf2107629dc}\label{catch_8cpp_af4de9d3e501b83d17a048cf2107629dc}} 
+Regex\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Matches} (std\+::string const \&regex, Case\+Sensitive case\+Sensitivity)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a228a8fff5aa311bd0e3592b8cb711392}\label{catch_8cpp_a228a8fff5aa311bd0e3592b8cb711392}} 
+std\+::string {\bfseries Catch\+::\+Matchers\+::\+Detail\+::describe\+\_\+multi\+\_\+matcher} (String\+Ref combine, std\+::string const $\ast$descriptions\+\_\+begin, std\+::string const $\ast$descriptions\+\_\+end)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a3a96a82307107087642e22fc4be5844d}\label{catch_8cpp_a3a96a82307107087642e22fc4be5844d}} 
+void {\bfseries Catch\+::handle\+Exception\+Match\+Expr} (Assertion\+Handler \&handler, String\+Matcher const \&matcher, String\+Ref const \&matcher\+String)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ae345560f84f68d52fc5df4ac77eb4b92}\label{catch_8cpp_ae345560f84f68d52fc5df4ac77eb4b92}} 
+Is\+Empty\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Is\+Empty} ()
+\item 
+\mbox{\Hypertarget{catch_8cpp_a640c1714c014191cc131b37f955f83ed}\label{catch_8cpp_a640c1714c014191cc131b37f955f83ed}} 
+Has\+Size\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Size\+Is} (std\+::size\+\_\+t sz)
+\item 
+\mbox{\Hypertarget{catch_8cpp_a0fcd8bd126bb510a6bb99e6360aa270a}\label{catch_8cpp_a0fcd8bd126bb510a6bb99e6360aa270a}} 
+Exception\+Message\+Matcher {\bfseries Catch\+::\+Matchers\+::\+Message} (std\+::string const \&message)
+\item 
+\mbox{\Hypertarget{catch_8cpp_af65507889895c5c4b04fb831eeab2972}\label{catch_8cpp_af65507889895c5c4b04fb831eeab2972}} 
+std\+::string {\bfseries Catch\+::get\+Formatted\+Duration} (double duration)
+\item 
+\mbox{\Hypertarget{catch_8cpp_af125966eee74f0256b8bfddec3840497}\label{catch_8cpp_af125966eee74f0256b8bfddec3840497}} 
+bool {\bfseries Catch\+::should\+Show\+Duration} (IConfig const \&config, double duration)
+\item 
+\mbox{\Hypertarget{catch_8cpp_ae5e405537e8a55293a1b6cad32e2cdb5}\label{catch_8cpp_ae5e405537e8a55293a1b6cad32e2cdb5}} 
+std\+::string {\bfseries Catch\+::serialize\+Filters} (std\+::vector$<$ std\+::string $>$ const \&filters)
+\item 
+\mbox{\Hypertarget{catch_8cpp_af9e08c6a973217bdd97c06d0b2c3262e}\label{catch_8cpp_af9e08c6a973217bdd97c06d0b2c3262e}} 
+std\+::ostream \& {\bfseries Catch\+::operator$<$$<$} (std\+::ostream \&out, line\+Of\+Chars value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{catch_8cpp_a549eca16e04ee9645945fc1cd056f1ee}\label{catch_8cpp_a549eca16e04ee9645945fc1cd056f1ee}} 
+CATCH\+\_\+\+INTERNAL\+\_\+\+START\+\_\+\+WARNINGS\+\_\+\+SUPPRESSION CATCH\+\_\+\+INTERNAL\+\_\+\+SUPPRESS\+\_\+\+GLOBALS\+\_\+\+WARNINGS const std\+::string {\bfseries Catch\+::\+Benchmark\+::\+Detail\+::benchmark\+Error\+Msg} = \char`\"{}a benchmark failed to run successfully\char`\"{}
+\item 
+\mbox{\Hypertarget{catch_8cpp_a466775f4eec29ffef29ab334cd885136}\label{catch_8cpp_a466775f4eec29ffef29ab334cd885136}} 
+const std\+::string {\bfseries Catch\+::\+Detail\+::unprintable\+String} = \char`\"{}\{?\}\char`\"{}
+\item 
+\mbox{\Hypertarget{catch_8cpp_aa133a64657b950497b6a90a917f80b30}\label{catch_8cpp_aa133a64657b950497b6a90a917f80b30}} 
+CATCH\+\_\+\+INTERNAL\+\_\+\+START\+\_\+\+WARNINGS\+\_\+\+SUPPRESSION CATCH\+\_\+\+INTERNAL\+\_\+\+SUPPRESS\+\_\+\+GLOBALS\+\_\+\+WARNINGS Leak\+Detector {\bfseries Catch\+::leak\+Detector}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a special TU that combines what would otherwise be a very small benchmarking-\/related TUs into one bigger TU.
+
+The reason for this is compilation performance improvements by avoiding reparsing headers for many small TUs, instead having this one TU include bit more, but having it all parsed only once.
+
+To avoid heavy-\/tail problem with compilation times, each \char`\"{}subpart\char`\"{} of Catch2 has its own combined TU like this.
+
+This is a special TU that combines what would otherwise be a very small generator-\/related TUs into one bigger TU.
+
+The reason for this is compilation performance improvements by avoiding reparsing headers for many small TUs, instead having this one TU include bit more, but having it all parsed only once.
+
+To avoid heavy-\/tail problem with compilation times, each \char`\"{}subpart\char`\"{} of Catch2 has its own combined TU like this.
+
+This is a special TU that combines what would otherwise be a very small interfaces-\/related TUs into one bigger TU.
+
+The reason for this is compilation performance improvements by avoiding reparsing headers for many small TUs, instead having this one TU include bit more, but having it all parsed only once.
+
+To avoid heavy-\/tail problem with compilation times, each \char`\"{}subpart\char`\"{} of Catch2 has its own combined TU like this.
+
+This is a special TU that combines what would otherwise be a very small top-\/level TUs into one bigger TU.
+
+The reason for this is compilation performance improvements by avoiding reparsing headers for many small TUs, instead having this one TU include bit more, but having it all parsed only once.
+
+To avoid heavy-\/tail problem with compilation times, each \char`\"{}subpart\char`\"{} of Catch2 has its own combined TU like this.
+
+This is a special TU that combines what would otherwise be a very small matcher-\/related TUs into one bigger TU.
+
+The reason for this is compilation performance improvements by avoiding reparsing headers for many small TUs, instead having this one TU include bit more, but having it all parsed only once.
+
+To avoid heavy-\/tail problem with compilation times, each \char`\"{}subpart\char`\"{} of Catch2 has its own combined TU like this.
+
+This is a special TU that combines what would otherwise be a very small reporter-\/related TUs into one bigger TU.
+
+The reason for this is compilation performance improvements by avoiding reparsing headers for many small TUs, instead having this one TU include bit more, but having it all parsed only once.
+
+To avoid heavy-\/tail problem with compilation times, each \char`\"{}subpart\char`\"{} of Catch2 has its own combined TU like this. 

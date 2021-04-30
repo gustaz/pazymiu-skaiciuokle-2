@@ -15,6 +15,7 @@
 #include <deque>
 #include <iterator>
 #include "studentas.h"
+#include "catch.hpp"
 
 #ifdef _WIN32
 #define WINPAUSE system("pause")
@@ -23,17 +24,44 @@
 static std::chrono::steady_clock::time_point clockStart;
 extern double accumulatedTime;
 
+//! Funkcija skirta direktoriju egzistavimui patikrinti.
+/*!
+  \param name direktorijos pavadinimas
+*/
 inline bool fileExists(const std::string& name) {
 	std::ifstream f(name.c_str());
 	return f.good();
 }
 
+//! Pavardes palyginimo struktura
+/*!
+  Struktura su palyginimo operatoriumi skirta studento pavardes eiliskumui.
+*/
+struct surnameCompare
+{
+    //! Operatorius ().
+    /*!
+      Leidzia algoritmuose kreiptis i sia struktura ir tokiu budu veikia kaip condition.
+    */
+	inline bool operator() (const Studentas& struct1, const Studentas& struct2)
+	{
+		return (struct1.getPavarde() > struct2.getPavarde());
+	}
+};
+
+//! Ivercio palyginimo struktura
+/*!
+  Struktura su palyginimo operatoriumi skirta studento statusui nustatyti.
+*/
 struct isKietiakas
 {
+    //! Operatorius ().
+    /*!
+      Leidzia algoritmuose kreiptis i sia struktura ir tokiu budu veikia kaip condition.
+    */
 	inline bool operator() (const Studentas& struct1)
 	{
-        double comp = struct1.getMed();
-		return (comp >= 5.00);
+		return (struct1.getMed() >= 5.00);
 	}
 };
 
@@ -51,6 +79,10 @@ void generateDirectories(std::string directory);
 void askForGeneration();
 double findMedian(std::vector<int> grades, int n);
 
+//! Funkcija skirta pasirinktiniam duomenu ivedimui atlikti.
+/*!
+  \param studentai konteineris su kuriuo bus dirbama
+*/
 template <class T>
 void readFromFile(T& studentai)
 {
@@ -171,6 +203,12 @@ void readFromFile(T& studentai)
 	accumulatedTime += std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count();
 }
 
+//! Funkcija skirta nuosekliam duomenu ivedimui atlikti.
+/*!
+  \param studentai konteineris su kuriuo bus dirbama
+  \param studentuSkaicius su kokiu skaiciumi studentu bus dirbama
+  \param input input filestream su kuriuo bus dirbama
+*/
 template <class T>
 void readFromFileAutomated(T& studentai, int studentuSkaicius, std::ifstream& input)
 {
@@ -222,7 +260,10 @@ void readFromFileAutomated(T& studentai, int studentuSkaicius, std::ifstream& in
 	}
 	input.close();
 }
-
+//! Funkcija skirta vieno studento duomenu ivedimui atlikti.
+/*!
+  \param studentai konteineris su kuriuo bus dirbama
+*/
 template <class T>
 void inputStudent(T& studentai)
 {
@@ -337,6 +378,11 @@ void inputStudent(T& studentai)
 	studentai.push_back(stud);
 }
 
+//! Funkcija skirta vidurkio isvedimui atlikti.
+/*!
+  \param studentai konteineris su kuriuo bus dirbama
+  \param output output (file) stream su kuriuo bus dirbama
+*/
 template <class T>
 void writeToConsoleAvg(T& studentai, std::ostream& out)
 {
@@ -357,6 +403,11 @@ void writeToConsoleAvg(T& studentai, std::ostream& out)
 	}
 }
 
+//! Funkcija skirta medianos isvedimui atlikti.
+/*!
+  \param studentai konteineris su kuriuo bus dirbama
+  \param output output (file) stream su kuriuo bus dirbama
+*/
 template <class T>
 void writeToConsoleMed(T& studentai, std::ostream& out)
 {
@@ -375,11 +426,18 @@ void writeToConsoleMed(T& studentai, std::ostream& out)
 			<< std::setw(15) << std::fixed << std::setprecision(2) << i.getMed()
 			<< "\n";
 	}
-
 }
 
+//! Automatizuotos programos veiklos funkcija skirta duomenu nuskaitymui.
+/*!
+  \param studentai konteineris su kuriuo bus dirbama
+  \param studentuFailuDydziai studentu skaicius su kuriuo bus dirbama
+  \param input input filestream su kuriuo bus dirbama
+  \param output output filestream su kuriuo bus dirbama
+  \param benchmarkTime laikas kuri programa uztrunka kol vykdo sia funkcija
+*/
 template <class T>
-void workFlow(T& studentai, int studentuFailuDydziai, std::ifstream& input, std::ofstream& output, char* type, double& benchmarkTime)
+void workFlow(T& studentai, int studentuFailuDydziai, std::ifstream& input, std::ofstream& output, double& benchmarkTime)
 {
 	std::cout << "Vykdomas failo nuskaitymas." << std::endl;
 	clockStart = std::chrono::steady_clock::now();
@@ -388,6 +446,15 @@ void workFlow(T& studentai, int studentuFailuDydziai, std::ifstream& input, std:
 	std::cout << studentuFailuDydziai << " studentu failo nuskaitymas truko: " << std::fixed << std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count() << "s" << std::endl;
 }
 
+//! Automatizuotos programos veiklos funkcija skirta duomenu isvedimui.
+/*!
+  \param studentai kietiaku konteineris su kuriuo bus dirbama
+  \param vargsiukai vargsiuku konteineris su kuriuo bus dirbama
+  \param studentuFailuDydziai studentu skaicius su kuriuo bus dirbama
+  \param output output filestream su kuriuo bus dirbama
+  \param benchmarkTime laikas kuri programa uztrunka kol vykdo sia funkcija
+  \param container konteinerio pavadinimas, su kuriuo tuo metu dirbama
+*/
 template <class T>
 void thenPrint(T& studentai, T& vargsiukai, int studentuFailuDydziai, std::ofstream& output, double& benchmarkTime, char container[])
 {

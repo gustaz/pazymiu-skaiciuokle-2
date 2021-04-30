@@ -1,5 +1,10 @@
 #include "declarations.h"
 
+
+//! Funkcija skirta failo generavimo klausimynui vykdyti
+/*!
+  Funkcija kuri apklausia vartotojo apie jo norimus generuoti failus.
+*/
 void askForGeneration()
 {
 	char pasirinkimas;
@@ -62,6 +67,10 @@ void askForGeneration()
 	}
 }
 
+//! Funkcija skirta direktoriju generavimui vykdyti.
+/*!
+  \param directory direktorijos vieta
+*/
 void generateDirectories(std::string directory)
 {
 	try 
@@ -84,6 +93,11 @@ void generateDirectories(std::string directory)
 	}
 }
 
+//! Funkcija skirta failo generavimo klausimynui vykdyti
+/*!
+  \param numberOfStudents studentu skaicius su kuriuo bus dirbama
+  \param output output filestream su kuriuo bus dirbama
+*/
 void generateFile(int numberOfStudents, std::ofstream& output)
 {
 	std::string fileName = "studentai" + std::to_string(numberOfStudents) + ".txt";
@@ -113,6 +127,12 @@ void generateFile(int numberOfStudents, std::ofstream& output)
 	output.close();
 }
 
+//! Funkcija skirta failo generavimui vykdyti
+/*!
+  \param studentuFailuDydziai studentu skaicius su kuriuo bus dirbama
+  \param output output filestream su kuriuo bus dirbama
+  \param benchmarkTime laikas kuri programa uztrunka kol vykdo sia funkcija
+*/
 void generationSequence(int studentuFailuDydziai, std::ofstream& output, double& benchmarkTime)
 {
 	std::cout << std::endl << "Pradedamas darbas su "
@@ -125,6 +145,12 @@ void generationSequence(int studentuFailuDydziai, std::ofstream& output, double&
 	benchmarkTime += std::chrono::duration<double>(std::chrono::steady_clock::now() - clockStart).count();
 }
 
+//! Funkcija skirta medianai rasti
+/*!
+  \param grades pazymiu aibe
+  \param n pazymiu aibes dydis
+  \return mediana
+*/
 double findMedian(std::vector<int> grades, int n)
 {
 	if (n % 2 == 0) {
@@ -140,7 +166,11 @@ double findMedian(std::vector<int> grades, int n)
 		return (double)grades[n / 2];
 	}
 }
-
+//! Funkcija skirta skaitinei ivesciai patikrinti
+/*!
+  \param skaicius ivedamas skaicius
+  \param limited bulis skirtas ijungti+ 1-10 apribojima
+*/
 void checkInput(int& skaicius, bool limited)
 	{
 		while (std::cin.fail() || skaicius < 0 || skaicius > 10)
@@ -168,7 +198,10 @@ void checkInput(int& skaicius, bool limited)
 			std::cin >> skaicius;
 		}
 	}
-
+//! Funkcija skirta simbolinei ivesciai patikrinti
+/*!
+  \param ivestis ivedamas simbolis
+*/
 void checkInput(char& ivestis)
 {
 	while (std::cin.fail() || tolower(ivestis) != 't' && tolower(ivestis) != 'n')

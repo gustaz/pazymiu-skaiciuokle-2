@@ -2,22 +2,22 @@
 
 double accumulatedTime = 0;
 
-bool surnameCompare(const Studentas& a, const Studentas& b)
-{
-	return(a.getPavarde() < b.getPavarde());
-}
-
 int main(int argc, char* argv[])
 {
 	std::chrono::steady_clock::time_point programStart = std::chrono::steady_clock::now();
 	std::cin.sync_with_stdio(false);
 	std::cout.sync_with_stdio(false);
     
+    
 	std::cout << "Atsakydami i programos uzduodamus klausimus rasykite raides T (-taip) arba N (-ne)."
 		<< std::endl;
 
 	char pasirinkimas;
 	bool isValid = false;
+	std::cout << std::endl;
+	for (int i = 0; i < argc; i++)
+		std::cout << argv[i] << std::endl;
+	std::cout << argc;
 	if (argc > 1)
 	{
 		
@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
 		if (isValid)
 		{
 			//std::vector<int> studentuFailuDydziai = { 1000, 10000, 100000, 1000000, 10000000 };
-			std::vector<int> studentuFailuDydziai = { 1000 };
+			std::vector<int> studentuFailuDydziai = { 1000, 10000, 100000 };
 			std::ofstream output;
 			std::ifstream input;
 
@@ -57,18 +57,20 @@ int main(int argc, char* argv[])
 				}
 			}
 
+
 			for (int i = 1; i < argc; i++)
 			{
 				if (strcmp(argv[i], "generate") == 0) i++;
+				if (i >= argc) break;
 				for (int j = 0; j < studentuFailuDydziai.size(); j++)
 				{
-					std::cout << "Pradedamas darbas su " << studentuFailuDydziai[j] << " " << argv[i] << " konteineriu" << std::endl;
 					double benchmarkTime = 0;
 					if (strcmp(argv[i], "vector") == 0)
 					{
+						std::cout << "Pradedamas darbas su " << studentuFailuDydziai[j] << " " << argv[i] << " konteineriu" << std::endl;
 						std::vector<Studentas> studentai;
 
-						workFlow(studentai, studentuFailuDydziai[j], input, output, argv[i], benchmarkTime);
+						workFlow(studentai, studentuFailuDydziai[j], input, output, benchmarkTime);
 
 						std::cout << "Vykdomas studentu rusiavimas pagal galutini ivertinima." << std::endl;
 						clockStart = std::chrono::steady_clock::now();
@@ -85,9 +87,10 @@ int main(int argc, char* argv[])
 					}
 					else if (strcmp(argv[i], "deque") == 0)
 					{
+						std::cout << "Pradedamas darbas su " << studentuFailuDydziai[j] << " " << argv[i] << " konteineriu" << std::endl;
 						std::deque<Studentas> studentai;
 
-						workFlow(studentai, studentuFailuDydziai[j], input, output, argv[i], benchmarkTime);
+						workFlow(studentai, studentuFailuDydziai[j], input, output, benchmarkTime);
 
 						std::cout << "Vykdomas studentu rusiavimas pagal galutini ivertinima." << std::endl;
 						clockStart = std::chrono::steady_clock::now();
@@ -102,9 +105,10 @@ int main(int argc, char* argv[])
 					}
 					else if (strcmp(argv[i], "list") == 0)
 					{
+						std::cout << "Pradedamas darbas su " << studentuFailuDydziai[j] << " " << argv[i] << " konteineriu" << std::endl;
 						std::list<Studentas> studentai;
 
-						workFlow(studentai, studentuFailuDydziai[j], input, output, argv[i], benchmarkTime);
+						workFlow(studentai, studentuFailuDydziai[j], input, output, benchmarkTime);
 
 						std::cout << "Vykdomas studentu rusiavimas pagal galutini ivertinima." << std::endl;
 						clockStart = std::chrono::steady_clock::now();
@@ -118,7 +122,6 @@ int main(int argc, char* argv[])
 
 						thenPrint(studentai, vargsiukai, studentuFailuDydziai[j], output, benchmarkTime, argv[i]);
 					}
-                    std::cout << std::endl;
 				}
 			}
 		}
@@ -277,7 +280,7 @@ int main(int argc, char* argv[])
 
 		if (tolower(pasirinkimas) == 'n' && !outputDone)
 		{
-			std::sort(studentai.begin(), studentai.end(), surnameCompare);
+			std::sort(studentai.begin(), studentai.end(), surnameCompare());
 			std::cout << "Pasirinkote paprasta isvesti i komandine eilute."
 				<< std::endl << "Ar norite, jog rezultate butu rodomas vidurkis? "
 				<< "Pasirinkus ne, bus rodoma mediana. (T/N): ";
@@ -302,5 +305,5 @@ int main(int argc, char* argv[])
 		}
 	}
 	std::cout << std::endl << "Galutinis vykdymas truko: " << accumulatedTime << " s." << std::endl;
-	std::cout << "Galutinis programos gyvavimo laikas: " << std::chrono::duration<double>(std::chrono::steady_clock::now() - programStart).count() << " s.";
+	std::cout << "Galutinis programos gyvavimo laikas: " << std::chrono::duration<double>(std::chrono::steady_clock::now() - programStart).count() << " s." << std::endl;
 }

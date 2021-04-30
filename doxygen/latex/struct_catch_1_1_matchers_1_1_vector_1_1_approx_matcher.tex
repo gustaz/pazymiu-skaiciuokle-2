@@ -1,0 +1,54 @@
+\hypertarget{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher}{}\doxysection{Catch\+::Matchers\+::Vector\+::Approx\+Matcher$<$ T, Alloc\+Comp, Alloc\+Match $>$ Struct Template Reference}
+\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher}\index{Catch::Matchers::Vector::ApproxMatcher$<$ T, AllocComp, AllocMatch $>$@{Catch::Matchers::Vector::ApproxMatcher$<$ T, AllocComp, AllocMatch $>$}}
+Inheritance diagram for Catch\+::Matchers\+::Vector\+::Approx\+Matcher$<$ T, Alloc\+Comp, Alloc\+Match $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.981132cm]{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a23147d891d3d9b6bb0af599ee87bbcc2}\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a23147d891d3d9b6bb0af599ee87bbcc2}} 
+{\bfseries Approx\+Matcher} (std\+::vector$<$ T, Alloc\+Comp $>$ const \&comparator)
+\item 
+\mbox{\Hypertarget{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_af200c5c98e8e2a6f24617ef4a0a6830a}\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_af200c5c98e8e2a6f24617ef4a0a6830a}} 
+bool {\bfseries match} (std\+::vector$<$ T, Alloc\+Match $>$ const \&v) const override
+\item 
+\mbox{\Hypertarget{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a760b0d1922d53b7ec327ac7418681c3f}\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a760b0d1922d53b7ec327ac7418681c3f}} 
+std\+::string {\bfseries describe} () const override
+\item 
+\mbox{\Hypertarget{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a31c47dac5f7346b526a145da343f9e3e}\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a31c47dac5f7346b526a145da343f9e3e}} 
+{\footnotesize template$<$typename  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+constructible$<$double, T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher}{Approx\+Matcher}} \& {\bfseries epsilon} (T const \&new\+Epsilon)
+\item 
+\mbox{\Hypertarget{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a619714cd68a4791584e040902bff583c}\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a619714cd68a4791584e040902bff583c}} 
+{\footnotesize template$<$typename  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+constructible$<$double, T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher}{Approx\+Matcher}} \& {\bfseries margin} (T const \&new\+Margin)
+\item 
+\mbox{\Hypertarget{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a6856447aebfb7c4fe6b792900fb68f45}\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a6856447aebfb7c4fe6b792900fb68f45}} 
+{\footnotesize template$<$typename  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+constructible$<$double, T$>$\+::value$>$\+::type$>$ }\\\mbox{\hyperlink{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher}{Approx\+Matcher}} \& {\bfseries scale} (T const \&new\+Scale)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a482a43ccf47697830d23bf0beaf06b9b}\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a482a43ccf47697830d23bf0beaf06b9b}} 
+std\+::vector$<$ T, Alloc\+Comp $>$ const  \& {\bfseries m\+\_\+comparator}
+\item 
+\mbox{\Hypertarget{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a0da9e77e66822ed7fd0164fc42420fa5}\label{struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher_a0da9e77e66822ed7fd0164fc42420fa5}} 
+\mbox{\hyperlink{class_catch_1_1_detail_1_1_approx}{Catch\+::\+Detail\+::\+Approx}} {\bfseries approx} = Catch\+::\+Detail\+::\+Approx\+::custom()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename Alloc\+Comp, typename Alloc\+Match$>$\newline
+struct Catch\+::\+Matchers\+::\+Vector\+::\+Approx\+Matcher$<$ T, Alloc\+Comp, Alloc\+Match $>$}
+
+
+
+Definition at line 3679 of file catch.\+hpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gusta/\+Desktop/\+VU ISI 1/1 kursas/2 semestras/\+Objektinis/2 uzduotis/pazymiu-\/skaiciuokle-\/2/catch.\+hpp\end{DoxyCompactItemize}

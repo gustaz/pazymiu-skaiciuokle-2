@@ -10,6 +10,8 @@
 * Jei ne, suteikia galimybę vartotojui pačiam įrašyti tiek įvertinimų, kiek jis nori.
 
 ## Programos diegimas
+1. Įdiegti naudojant installer ar setup
+ARBA
 1. Parsisiųsti norimą programos versijos kodą iš releases;
 2. Kodą sukompiliuoti per komandinę eilutę arba pasirinktą IDE;
 Rankiniu būdu:
@@ -193,3 +195,4 @@ Dviejų konteinerių metodas išlošia priešingu atveju - kai laikas svarbu ir 
 * [v1.1](https://github.com/gustaz/pazymiu-skaiciuokle-2/releases/tag/v1.1) Studentų struktūra pakeista į klasę, pridėti paleidimo laikai su optimizavimo vėliavėlemis.
 * [v1.2](https://github.com/gustaz/pazymiu-skaiciuokle-2/releases/tag/v1.2) Implementuotas „rule of three“ - destruktorius, copy konstruktorius bei copy assignment operatorius.
 * [v1.5](https://github.com/gustaz/pazymiu-skaiciuokle-2/releases/tag/v1.5) Sukurta abstrakti bazinė klasė žmogus.
+* [v2.0](https://github.com/gustaz/pazymiu-skaiciuokle-2/releases/tag/v2.0) Pridėta doxygen dokumentacija, pridėti unit testai, programinio kodo aptvarkymas.

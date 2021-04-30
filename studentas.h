@@ -4,14 +4,29 @@
 #include "zmogus.h"
 #include <vector>
 
+//! Studento klase. 
+/*!
+  Studento klase, laikanti visus su studentu susijusius duomenis. Paveldi is zmogaus klases.
+*/
+
 class Studentas : public Zmogus {
 private:
-    int egz;
-    std::vector<int> nd;
-    double vid, med;
+    int egz; /*!< Studento gautas egzamino ivertis */
+    std::vector<int> nd; /*!< Studento namu darbu aibe */
+    double vid; /*!< Studento aritmetinis vidurkis */
+    double med; /*!< Studento pazymiu mediana */
 public:
+    //! Studento konstruktorius.
+    /*!
+      Konstruktorius su priskirtomis bazinemis reiksmemis.
+    */
     Studentas() : egz(0), vid(0), med(0) { Zmogus::vardas = "", Zmogus::pavarde = ""; }
+
     Studentas(std::string vardas_, std::string pavarde_, int egz, std::vector<int> nd, double vid, double med) : egz(egz), vid(vid), med(med) { vardas = vardas_; pavarde = pavarde_; }
+    //! Copy konstruktorius.
+    /*!
+      Konstruktorius skirtas perduoti parametrus is vieno sios klases objekto kitam.
+    */
     Studentas (const Studentas& a) : egz(a.getEgz()) , vid(a.getVid()), med(a.getMed())
     {
         vardas = a.getVardas();
@@ -23,6 +38,10 @@ public:
             nd.push_back(i);
         }
     }
+    //! Copy assignment operatorius.
+    /*!
+      Operatorius skirtas copy assignment operacijos igalinimui.
+    */
     Studentas& operator=(const Studentas& a) 
     {
         if(&a == this) return *this;
@@ -41,17 +60,55 @@ public:
         }
         return *this;
     }
+    //! Destruktorius.
+    /*!
+      Objekto destruktorius.
+    */
     ~Studentas(){}
-    
-    Studentas(std::string vardas, std::string pavarde, int egz, std::vector<int> nd);
+    //! Member funkcija egzamino iverciui gauti.
+    /*!
+      \return egz
+    */
     inline int getEgz() const { return egz; }
+    //! Member funkcija namu darbu aibei gauti.
+    /*!
+      \return pavarde
+    */
     inline std::vector<int> getNd() const { return nd; }
+    //! Member funkcija aritmetiniui vidurkiui gauti.
+    /*!
+      \return vid
+    */
     inline double getVid() const { return vid; }
+    //! Member funkcija medianai gauti.
+    /*!
+      \return med
+    */
     inline double getMed() const { return med; }
+    //! Member funkcija egzaminui nustatyti
+    /*!
+      \param egz egzamino pazymys kuris bus nustatomas
+    */
     inline void setEgz(int egz) { Studentas::egz = egz; }
+    //! Member funkcija vienam pazymiui prie pazymiu aibes prideti
+    /*!
+      \param ndn namu darbo ivertinimas, kuris bus pridedamas
+    */
     inline void addOneNd(int ndn) { nd.push_back(ndn); }
+    //! Member funkcija nustatyti visiems namu darbams
+    /*!
+      \param nd kuri namu darbu aibe bus nustatoma 
+    */
     inline void addNd(std::vector<int> nd) { Studentas::nd = nd; }
+    //! Member funkcija aritmetiniam vidurkiui nustatyti
+    /*!
+      \param vid kuris aritmetinis vidurkis bus nustatomas
+    */
     inline void setVid(double vid) { Studentas::vid = vid; }
+    //! Member funkcija medianai nustatyti
+    /*!
+      \param vid kuri mediana bus nustatoma
+    */
     inline void setMed(double med) { Studentas::med = med; }
 };
 

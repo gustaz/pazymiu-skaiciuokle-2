@@ -1,0 +1,980 @@
+\hypertarget{declarations_8h}{}\doxysection{C\+:/\+Users/gusta/\+Desktop/\+VU ISI 1/1 kursas/2 semestras/\+Objektinis/2 uzduotis/pazymiu-\/skaiciuokle-\/2/declarations.h File Reference}
+\label{declarations_8h}\index{C:/Users/gusta/Desktop/VU ISI 1/1 kursas/2 semestras/Objektinis/2 uzduotis/pazymiu-\/skaiciuokle-\/2/declarations.h@{C:/Users/gusta/Desktop/VU ISI 1/1 kursas/2 semestras/Objektinis/2 uzduotis/pazymiu-\/skaiciuokle-\/2/declarations.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$io.\+h$>$}\newline
+{\ttfamily \#include $<$direct.\+h$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include \char`\"{}studentas.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}catch.\+hpp\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsurname_compare}{surname\+Compare}}
+\begin{DoxyCompactList}\small\item\em Pavardes palyginimo struktura. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structis_kietiakas}{is\+Kietiakas}}
+\begin{DoxyCompactList}\small\item\em Ivercio palyginimo struktura. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{declarations_8h_a8da6832660ffb6bbf974846015f44a21}{file\+Exists}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Funkcija skirta direktoriju egzistavimui patikrinti. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{declarations_8h_a7ab75aa46c72a7420a3ece770928c463}{check\+Input}} (int \&skaicius, bool limited)
+\begin{DoxyCompactList}\small\item\em Funkcija skirta skaitinei ivesciai patikrinti. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{declarations_8h_a6fa8ea55999517be6779672d8582ef8f}{check\+Input}} (char \&ivestis)
+\begin{DoxyCompactList}\small\item\em Funkcija skirta simbolinei ivesciai patikrinti. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{declarations_8h_a0ae9e954b90aa711de1551043e34e16a}{generate\+File}} (int number\+Of\+Students, std\+::ofstream \&output)
+\begin{DoxyCompactList}\small\item\em Funkcija skirta failo generavimo klausimynui vykdyti. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{declarations_8h_ac44e8dd207d8182a0b95632aa38e39d7}{generate\+Directories}} (std\+::string directory)
+\begin{DoxyCompactList}\small\item\em Funkcija skirta direktoriju generavimui vykdyti. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{declarations_8h_a1278e72e1ffa87c1ca93cb582447e4c6}{ask\+For\+Generation}} ()
+\begin{DoxyCompactList}\small\item\em Funkcija skirta failo generavimo klausimynui vykdyti. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{declarations_8h_a7973d2e0a026a60ea4dd3a233f7e9aca}{find\+Median}} (std\+::vector$<$ int $>$ grades, int n)
+\begin{DoxyCompactList}\small\item\em Funkcija skirta medianai rasti. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{declarations_8h_a51250f9cd5fb230ff749d9a4f749b904}{read\+From\+File}} (T \&studentai)
+\begin{DoxyCompactList}\small\item\em Funkcija skirta pasirinktiniam duomenu ivedimui atlikti. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{declarations_8h_a01454fece5717f5e993787e2e334de91}{read\+From\+File\+Automated}} (T \&studentai, int studentu\+Skaicius, std\+::ifstream \&input)
+\begin{DoxyCompactList}\small\item\em Funkcija skirta nuosekliam duomenu ivedimui atlikti. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{declarations_8h_ac32f94392c3bd7a5b4c8a3a3edefa9b7}{input\+Student}} (T \&studentai)
+\begin{DoxyCompactList}\small\item\em Funkcija skirta vieno studento duomenu ivedimui atlikti. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{declarations_8h_a3d1908dde9f9138320910efa393b45ca}{write\+To\+Console\+Avg}} (T \&studentai, std\+::ostream \&out)
+\begin{DoxyCompactList}\small\item\em Funkcija skirta vidurkio isvedimui atlikti. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{declarations_8h_aa72a74e3df98e95bce2503ecc3a7e53e}{write\+To\+Console\+Med}} (T \&studentai, std\+::ostream \&out)
+\begin{DoxyCompactList}\small\item\em Funkcija skirta medianos isvedimui atlikti. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{declarations_8h_a520b4ad1282f44afe03049f77531e674}{work\+Flow}} (T \&studentai, int studentu\+Failu\+Dydziai, std\+::ifstream \&input, std\+::ofstream \&output, double \&benchmark\+Time)
+\begin{DoxyCompactList}\small\item\em Automatizuotos programos veiklos funkcija skirta duomenu nuskaitymui. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{declarations_8h_a3f77417b45b97e4344913b80fb4fb193}{then\+Print}} (T \&studentai, T \&vargsiukai, int studentu\+Failu\+Dydziai, std\+::ofstream \&output, double \&benchmark\+Time, char container\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Automatizuotos programos veiklos funkcija skirta duomenu isvedimui. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{declarations_8h_a5233fa7b5df40e8ffab7eb0ba31a1a03}{generation\+Sequence}} (int studentu\+Failu\+Dydziai, std\+::ofstream \&output, double \&benchmark\+Time)
+\begin{DoxyCompactList}\small\item\em Funkcija skirta failo generavimui vykdyti. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{declarations_8h_a0e614e4d9cd7471ab7d1abe13f5f9a14}{accumulated\+Time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{declarations_8h_a1278e72e1ffa87c1ca93cb582447e4c6}\label{declarations_8h_a1278e72e1ffa87c1ca93cb582447e4c6}} 
+\index{declarations.h@{declarations.h}!askForGeneration@{askForGeneration}}
+\index{askForGeneration@{askForGeneration}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{askForGeneration()}{askForGeneration()}}
+{\footnotesize\ttfamily void ask\+For\+Generation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Funkcija skirta failo generavimo klausimynui vykdyti. 
+
+Funkcija kuri apklausia vartotojo apie jo norimus generuoti failus. 
+
+Definition at line 8 of file functions.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keywordtype}{char} pasirinkimas;}
+\DoxyCodeLine{11     std::ofstream output;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \mbox{\hyperlink{functions_8cpp_ac44e8dd207d8182a0b95632aa38e39d7}{generateDirectories}}(\textcolor{stringliteral}{"{}data"{}});}
+\DoxyCodeLine{14     \mbox{\hyperlink{functions_8cpp_ac44e8dd207d8182a0b95632aa38e39d7}{generateDirectories}}(\textcolor{stringliteral}{"{}data/input"{}});}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     std::cout << \textcolor{stringliteral}{"{}Ar norite generuoti 1 000 studentu faila? (T/N): "{}};}
+\DoxyCodeLine{17     std::cin >> pasirinkimas;}
+\DoxyCodeLine{18     \mbox{\hyperlink{functions_8cpp_a7ab75aa46c72a7420a3ece770928c463}{checkInput}}(pasirinkimas);}
+\DoxyCodeLine{19     \textcolor{keywordflow}{if} (tolower(pasirinkimas) == \textcolor{charliteral}{'t'})}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21         clockStart = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{22         \mbox{\hyperlink{functions_8cpp_a0ae9e954b90aa711de1551043e34e16a}{generateFile}}(1000, output);}
+\DoxyCodeLine{23         std::cout << 1000 << \textcolor{stringliteral}{"{} studentu failo generavimas truko: "{}} << std::fixed << std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count() << \textcolor{stringliteral}{"{}s"{}} << std::endl;}
+\DoxyCodeLine{24         \mbox{\hyperlink{declarations_8h_a0e614e4d9cd7471ab7d1abe13f5f9a14}{accumulatedTime}} += std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count();}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     std::cout << \textcolor{stringliteral}{"{}Ar norite generuoti 10 000 studentu faila? (T/N): "{}};}
+\DoxyCodeLine{28     std::cin >> pasirinkimas;}
+\DoxyCodeLine{29     \mbox{\hyperlink{functions_8cpp_a7ab75aa46c72a7420a3ece770928c463}{checkInput}}(pasirinkimas);}
+\DoxyCodeLine{30     \textcolor{keywordflow}{if} (tolower(pasirinkimas) == \textcolor{charliteral}{'t'})}
+\DoxyCodeLine{31     \{}
+\DoxyCodeLine{32         clockStart = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{33         \mbox{\hyperlink{functions_8cpp_a0ae9e954b90aa711de1551043e34e16a}{generateFile}}(10000, output);}
+\DoxyCodeLine{34         std::cout << 10000 << \textcolor{stringliteral}{"{} studentu failo generavimas truko: "{}} << std::fixed << std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count() << \textcolor{stringliteral}{"{}s"{}} << std::endl;}
+\DoxyCodeLine{35         \mbox{\hyperlink{declarations_8h_a0e614e4d9cd7471ab7d1abe13f5f9a14}{accumulatedTime}} += std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count();}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     std::cout << \textcolor{stringliteral}{"{}Ar norite generuoti 100 000 studentu faila? (T/N): "{}};}
+\DoxyCodeLine{39     std::cin >> pasirinkimas;}
+\DoxyCodeLine{40     \mbox{\hyperlink{functions_8cpp_a7ab75aa46c72a7420a3ece770928c463}{checkInput}}(pasirinkimas);}
+\DoxyCodeLine{41     \textcolor{keywordflow}{if} (tolower(pasirinkimas) == \textcolor{charliteral}{'t'})}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43         clockStart = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{44         \mbox{\hyperlink{functions_8cpp_a0ae9e954b90aa711de1551043e34e16a}{generateFile}}(100000, output);}
+\DoxyCodeLine{45         std::cout << 100000 << \textcolor{stringliteral}{"{} studentu failo generavimas truko: "{}} << std::fixed << std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count() << \textcolor{stringliteral}{"{}s"{}} << std::endl;}
+\DoxyCodeLine{46         \mbox{\hyperlink{declarations_8h_a0e614e4d9cd7471ab7d1abe13f5f9a14}{accumulatedTime}} += std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count();}
+\DoxyCodeLine{47     \}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     std::cout << \textcolor{stringliteral}{"{}Ar norite generuoti 1 000 000 studentu faila? (T/N): "{}};}
+\DoxyCodeLine{50     std::cin >> pasirinkimas;}
+\DoxyCodeLine{51     \mbox{\hyperlink{functions_8cpp_a7ab75aa46c72a7420a3ece770928c463}{checkInput}}(pasirinkimas);}
+\DoxyCodeLine{52     \textcolor{keywordflow}{if} (tolower(pasirinkimas) == \textcolor{charliteral}{'t'})}
+\DoxyCodeLine{53     \{}
+\DoxyCodeLine{54         clockStart = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{55         \mbox{\hyperlink{functions_8cpp_a0ae9e954b90aa711de1551043e34e16a}{generateFile}}(1000000, output);}
+\DoxyCodeLine{56         std::cout << 1000000 << \textcolor{stringliteral}{"{} studentu failo generavimas truko: "{}} << std::fixed << std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count() << \textcolor{stringliteral}{"{}s"{}} << std::endl;}
+\DoxyCodeLine{57         \mbox{\hyperlink{declarations_8h_a0e614e4d9cd7471ab7d1abe13f5f9a14}{accumulatedTime}} += std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count();}
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     std::cout << \textcolor{stringliteral}{"{}Ar norite generuoti 10 000 000 studentu faila? (T/N): "{}};}
+\DoxyCodeLine{61     std::cin >> pasirinkimas;}
+\DoxyCodeLine{62     \mbox{\hyperlink{functions_8cpp_a7ab75aa46c72a7420a3ece770928c463}{checkInput}}(pasirinkimas);}
+\DoxyCodeLine{63     \textcolor{keywordflow}{if} (tolower(pasirinkimas) == \textcolor{charliteral}{'t'})}
+\DoxyCodeLine{64     \{}
+\DoxyCodeLine{65         clockStart = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{66         \mbox{\hyperlink{functions_8cpp_a0ae9e954b90aa711de1551043e34e16a}{generateFile}}(10000000, output);}
+\DoxyCodeLine{67     \}}
+\DoxyCodeLine{68 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_a6fa8ea55999517be6779672d8582ef8f}\label{declarations_8h_a6fa8ea55999517be6779672d8582ef8f}} 
+\index{declarations.h@{declarations.h}!checkInput@{checkInput}}
+\index{checkInput@{checkInput}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{checkInput()}{checkInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void check\+Input (\begin{DoxyParamCaption}\item[{char \&}]{ivestis }\end{DoxyParamCaption})}
+
+
+
+Funkcija skirta simbolinei ivesciai patikrinti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ivestis} & ivedamas simbolis \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 205 of file functions.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{206 \{}
+\DoxyCodeLine{207     \textcolor{keywordflow}{while} (std::cin.fail() || tolower(ivestis) != \textcolor{charliteral}{'t'} \&\& tolower(ivestis) != \textcolor{charliteral}{'n'})}
+\DoxyCodeLine{208     \{}
+\DoxyCodeLine{209         \textcolor{keywordflow}{if} (std::cin.fail())}
+\DoxyCodeLine{210             std::cout}
+\DoxyCodeLine{211             << \textcolor{stringliteral}{"{}Ivedete reiksme, netenkinancia salygos! (Gal netycia vietoje raides ivedete skaiciu?)"{}}}
+\DoxyCodeLine{212             << std::endl;}
+\DoxyCodeLine{213         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tolower(ivestis) != \textcolor{charliteral}{'t'} \&\& tolower(ivestis) != \textcolor{charliteral}{'n'})}
+\DoxyCodeLine{214             std::cout}
+\DoxyCodeLine{215             << \textcolor{stringliteral}{"{}Atsakydami i programos uzduodamus klausimus rasykite raides T (-\/taip) arba N (-\/ne)!"{}}}
+\DoxyCodeLine{216             << std::endl;}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218         std::cin.clear();}
+\DoxyCodeLine{219         std::cin.ignore(256, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{220         std::cout << \textcolor{stringliteral}{"{}Pakartokite ivedima: "{}};}
+\DoxyCodeLine{221         std::cin >> ivestis;}
+\DoxyCodeLine{222     \}}
+\DoxyCodeLine{223 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_a7ab75aa46c72a7420a3ece770928c463}\label{declarations_8h_a7ab75aa46c72a7420a3ece770928c463}} 
+\index{declarations.h@{declarations.h}!checkInput@{checkInput}}
+\index{checkInput@{checkInput}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{checkInput()}{checkInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void check\+Input (\begin{DoxyParamCaption}\item[{int \&}]{skaicius,  }\item[{bool}]{limited }\end{DoxyParamCaption})}
+
+
+
+Funkcija skirta skaitinei ivesciai patikrinti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em skaicius} & ivedamas skaicius \\
+\hline
+{\em limited} & bulis skirtas ijungti+ 1-\/10 apribojima \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file functions.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{175     \{}
+\DoxyCodeLine{176         \textcolor{keywordflow}{while} (std::cin.fail() || skaicius < 0 || skaicius > 10)}
+\DoxyCodeLine{177         \{}
+\DoxyCodeLine{178             \textcolor{keywordflow}{if} (std::cin.fail())}
+\DoxyCodeLine{179                 std::cout}
+\DoxyCodeLine{180                 << \textcolor{stringliteral}{"{}Ivedete reiksme, netenkinancia salygos! (Gal netycia vietoje skaiciaus ivedete raide?)"{}}}
+\DoxyCodeLine{181                 << std::endl;}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (skaicius <= 0)}
+\DoxyCodeLine{184                 std::cout}
+\DoxyCodeLine{185                 << \textcolor{stringliteral}{"{}Ivedete reiksme, netenkinancia salygos! (Skaicius negali buti mazesne uz 0!)"{}}}
+\DoxyCodeLine{186                 << std::endl;}
+\DoxyCodeLine{187             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (skaicius > 10)}
+\DoxyCodeLine{188             \{}
+\DoxyCodeLine{189                 \textcolor{keywordflow}{if} (!limited) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191                 std::cout}
+\DoxyCodeLine{192                     << \textcolor{stringliteral}{"{}Ivedete reiksme, netenkinancia salygos! (Skaicius negali buti didesnis uz 10!)"{}}}
+\DoxyCodeLine{193                     << std::endl;}
+\DoxyCodeLine{194             \}}
+\DoxyCodeLine{195             std::cin.clear();}
+\DoxyCodeLine{196             std::cin.ignore(256, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{197             std::cout << \textcolor{stringliteral}{"{}Pakartokite ivedima: "{}};}
+\DoxyCodeLine{198             std::cin >> skaicius;}
+\DoxyCodeLine{199         \}}
+\DoxyCodeLine{200     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_a8da6832660ffb6bbf974846015f44a21}\label{declarations_8h_a8da6832660ffb6bbf974846015f44a21}} 
+\index{declarations.h@{declarations.h}!fileExists@{fileExists}}
+\index{fileExists@{fileExists}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{fileExists()}{fileExists()}}
+{\footnotesize\ttfamily bool file\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Funkcija skirta direktoriju egzistavimui patikrinti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & direktorijos pavadinimas \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file declarations.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31                                               \{}
+\DoxyCodeLine{32     std::ifstream f(name.c\_str());}
+\DoxyCodeLine{33     \textcolor{keywordflow}{return} f.good();}
+\DoxyCodeLine{34 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_a7973d2e0a026a60ea4dd3a233f7e9aca}\label{declarations_8h_a7973d2e0a026a60ea4dd3a233f7e9aca}} 
+\index{declarations.h@{declarations.h}!findMedian@{findMedian}}
+\index{findMedian@{findMedian}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{findMedian()}{findMedian()}}
+{\footnotesize\ttfamily double find\+Median (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{grades,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Funkcija skirta medianai rasti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grades} & pazymiu aibe \\
+\hline
+{\em n} & pazymiu aibes dydis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mediana 
+\end{DoxyReturn}
+
+
+Definition at line 154 of file functions.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{155 \{}
+\DoxyCodeLine{156     \textcolor{keywordflow}{if} (n \% 2 == 0) \{}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158         nth\_element(grades.begin(), grades.begin() + n / 2, grades.end());}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160         nth\_element(grades.begin(), grades.begin() + (n -\/ 1) / 2, grades.end());}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{double})(grades[(n -\/ 1) / 2] + grades[n / 2]) / 2.0;}
+\DoxyCodeLine{163     \}}
+\DoxyCodeLine{164     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{165         nth\_element(grades.begin(), grades.begin() + n / 2, grades.end());}
+\DoxyCodeLine{166         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{double})grades[n / 2];}
+\DoxyCodeLine{167     \}}
+\DoxyCodeLine{168 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_ac44e8dd207d8182a0b95632aa38e39d7}\label{declarations_8h_ac44e8dd207d8182a0b95632aa38e39d7}} 
+\index{declarations.h@{declarations.h}!generateDirectories@{generateDirectories}}
+\index{generateDirectories@{generateDirectories}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{generateDirectories()}{generateDirectories()}}
+{\footnotesize\ttfamily void generate\+Directories (\begin{DoxyParamCaption}\item[{std\+::string}]{directory }\end{DoxyParamCaption})}
+
+
+
+Funkcija skirta direktoriju generavimui vykdyti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & direktorijos vieta \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file functions.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75 \{}
+\DoxyCodeLine{76     \textcolor{keywordflow}{try} }
+\DoxyCodeLine{77     \{}
+\DoxyCodeLine{78         \textcolor{keywordtype}{int} dir = \_mkdir(directory.c\_str());}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80         \textcolor{keywordflow}{if} (dir == 0)}
+\DoxyCodeLine{81             std::cout << \textcolor{stringliteral}{"{}Sukurta direktorija "{}} + directory << \textcolor{stringliteral}{"{}."{}} << std::endl;}
+\DoxyCodeLine{82         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{83             \textcolor{keywordflow}{if} (dir != 0 \&\& errno == EEXIST)}
+\DoxyCodeLine{84             \{}
+\DoxyCodeLine{85                 std::cout << \textcolor{stringliteral}{"{}Direktorija "{}} + directory + \textcolor{stringliteral}{"{} jau egzistuoja. Nieko nedaroma."{}} << std::endl;}
+\DoxyCodeLine{86             \}}
+\DoxyCodeLine{87         \textcolor{keywordflow}{else} \textcolor{keywordflow}{throw}(1);}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89     \textcolor{keywordflow}{catch} (\textcolor{keywordtype}{int} err)}
+\DoxyCodeLine{90     \{}
+\DoxyCodeLine{91         std::cout << \textcolor{stringliteral}{"{}Ivyko klaida aplankalu kurimo metu! Programa nutraukia veikla."{}};}
+\DoxyCodeLine{92         exit(1);}
+\DoxyCodeLine{93     \}}
+\DoxyCodeLine{94 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_a0ae9e954b90aa711de1551043e34e16a}\label{declarations_8h_a0ae9e954b90aa711de1551043e34e16a}} 
+\index{declarations.h@{declarations.h}!generateFile@{generateFile}}
+\index{generateFile@{generateFile}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{generateFile()}{generateFile()}}
+{\footnotesize\ttfamily void generate\+File (\begin{DoxyParamCaption}\item[{int}]{number\+Of\+Students,  }\item[{std\+::ofstream \&}]{output }\end{DoxyParamCaption})}
+
+
+
+Funkcija skirta failo generavimo klausimynui vykdyti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+Of\+Students} & studentu skaicius su kuriuo bus dirbama \\
+\hline
+{\em output} & output filestream su kuriuo bus dirbama \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file functions.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{102 \{}
+\DoxyCodeLine{103     std::string fileName = \textcolor{stringliteral}{"{}studentai"{}} + std::to\_string(numberOfStudents) + \textcolor{stringliteral}{"{}.txt"{}};}
+\DoxyCodeLine{104     output.open(\textcolor{stringliteral}{"{}data/input/"{}} + fileName);}
+\DoxyCodeLine{105     output << std::left << std::setw(20) << \textcolor{stringliteral}{"{}Vardas"{}} << std::setw(20) << \textcolor{stringliteral}{"{}Pavarde"{}} ;}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{keywordtype}{int} noOfHomework = 20;}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < noOfHomework; i++)}
+\DoxyCodeLine{110     \{}
+\DoxyCodeLine{111         output << std::setw(7) << \textcolor{stringliteral}{"{}ND"{}} + std::to\_string(i + 1);}
+\DoxyCodeLine{112     \}}
+\DoxyCodeLine{113     output << std::setw(7) << \textcolor{stringliteral}{"{}Egz."{}} << std::endl;}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < numberOfStudents; i++)}
+\DoxyCodeLine{116     \{}
+\DoxyCodeLine{117         \textcolor{keywordtype}{int} grades = gradeGen();}
+\DoxyCodeLine{118         output << std::setw(20) << \textcolor{stringliteral}{"{}Vardas"{}} + std::to\_string(i + 1) << std::setw(20) << \textcolor{stringliteral}{"{}Pavarde"{}} + std::to\_string(i + 1);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < noOfHomework; i++)}
+\DoxyCodeLine{121         \{}
+\DoxyCodeLine{122             output << std::setw(7) << gradeGen();}
+\DoxyCodeLine{123         \}}
+\DoxyCodeLine{124         output << std::setw(7) << gradeGen();}
+\DoxyCodeLine{125         \textcolor{keywordflow}{if}(i != numberOfStudents -\/ 1) output << std::endl;}
+\DoxyCodeLine{126     \}}
+\DoxyCodeLine{127     output.close();}
+\DoxyCodeLine{128 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_a5233fa7b5df40e8ffab7eb0ba31a1a03}\label{declarations_8h_a5233fa7b5df40e8ffab7eb0ba31a1a03}} 
+\index{declarations.h@{declarations.h}!generationSequence@{generationSequence}}
+\index{generationSequence@{generationSequence}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{generationSequence()}{generationSequence()}}
+{\footnotesize\ttfamily void generation\+Sequence (\begin{DoxyParamCaption}\item[{int}]{studentu\+Failu\+Dydziai,  }\item[{std\+::ofstream \&}]{output,  }\item[{double \&}]{benchmark\+Time }\end{DoxyParamCaption})}
+
+
+
+Funkcija skirta failo generavimui vykdyti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentu\+Failu\+Dydziai} & studentu skaicius su kuriuo bus dirbama \\
+\hline
+{\em output} & output filestream su kuriuo bus dirbama \\
+\hline
+{\em benchmark\+Time} & laikas kuri programa uztrunka kol vykdo sia funkcija \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 136 of file functions.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{137 \{}
+\DoxyCodeLine{138     std::cout << std::endl << \textcolor{stringliteral}{"{}Pradedamas darbas su "{}}}
+\DoxyCodeLine{139         << studentuFailuDydziai << \textcolor{stringliteral}{"{} duomenimis."{}} << std::endl;}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     clockStart = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{142     std::cout << \textcolor{stringliteral}{"{}Vykdomas failo generavimas."{}} << std::endl;}
+\DoxyCodeLine{143     \mbox{\hyperlink{functions_8cpp_a0ae9e954b90aa711de1551043e34e16a}{generateFile}}(studentuFailuDydziai, output);}
+\DoxyCodeLine{144     std::cout << studentuFailuDydziai << \textcolor{stringliteral}{"{} studentu failo generavimas truko: "{}} << std::fixed << std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count() << \textcolor{stringliteral}{"{}s"{}} << std::endl;}
+\DoxyCodeLine{145     benchmarkTime += std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count();}
+\DoxyCodeLine{146 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_ac32f94392c3bd7a5b4c8a3a3edefa9b7}\label{declarations_8h_ac32f94392c3bd7a5b4c8a3a3edefa9b7}} 
+\index{declarations.h@{declarations.h}!inputStudent@{inputStudent}}
+\index{inputStudent@{inputStudent}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{inputStudent()}{inputStudent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void input\+Student (\begin{DoxyParamCaption}\item[{T \&}]{studentai }\end{DoxyParamCaption})}
+
+
+
+Funkcija skirta vieno studento duomenu ivedimui atlikti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & konteineris su kuriuo bus dirbama \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 268 of file declarations.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{269 \{}
+\DoxyCodeLine{270     \mbox{\hyperlink{class_studentas}{Studentas}} stud;}
+\DoxyCodeLine{271     \textcolor{keywordtype}{char} pasirinkimas;}
+\DoxyCodeLine{272     \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274     std::string input;}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276     std::cout << \textcolor{stringliteral}{"{}Iveskite studento varda: "{}};}
+\DoxyCodeLine{277     getline(std::cin, input);}
+\DoxyCodeLine{278     stud.\mbox{\hyperlink{class_zmogus_a1fa1dc429f8219cf1ad8f172c083248c}{setVardas}}(input);}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280     std::cout << \textcolor{stringliteral}{"{}Iveskite studento pavarde: "{}};}
+\DoxyCodeLine{281     getline(std::cin, input);}
+\DoxyCodeLine{282     stud.\mbox{\hyperlink{class_zmogus_a0a1d21e522ee1423e8b50d1306b6db28}{setPavarde}}(input);}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284     std::cout << \textcolor{stringliteral}{"{}Pradedami ivesti studento "{}} << stud.\mbox{\hyperlink{class_zmogus_a4a580af3507a2d27efe978d5be0075ab}{getVardas}}() << \textcolor{stringliteral}{"{} "{}} << stud.\mbox{\hyperlink{class_zmogus_ac50d1e325af387bb385eb88bb7ff42b7}{getPavarde}}() << \textcolor{stringliteral}{"{} duomenys."{}}}
+\DoxyCodeLine{285         << std::endl}
+\DoxyCodeLine{286         << \textcolor{stringliteral}{"{}Ar zinomas tikslus atliktu namu darbu skaicius? (T/N): "{}};}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288     std::cin >> pasirinkimas;}
+\DoxyCodeLine{289     \mbox{\hyperlink{declarations_8h_a7ab75aa46c72a7420a3ece770928c463}{checkInput}}(pasirinkimas);}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291     \textcolor{keywordflow}{if} (tolower(pasirinkimas) == \textcolor{charliteral}{'t'})}
+\DoxyCodeLine{292     \{}
+\DoxyCodeLine{293         std::cout << \textcolor{stringliteral}{"{}Iveskite studento atliktu namu darbu skaiciu: "{}};}
+\DoxyCodeLine{294         std::cin >> n;}
+\DoxyCodeLine{295         \mbox{\hyperlink{declarations_8h_a7ab75aa46c72a7420a3ece770928c463}{checkInput}}(n, \textcolor{keyword}{false});}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297         std::cout << \textcolor{stringliteral}{"{}Dabar yra suteikiama galimybe pasirinkti ivedima."{}}}
+\DoxyCodeLine{298             << \textcolor{stringliteral}{"{} Duomenys vedami arba ranka, arba generuojami atsitiktinai."{}}}
+\DoxyCodeLine{299             << std::endl}
+\DoxyCodeLine{300             << \textcolor{stringliteral}{"{}Ar norite duomenis generuoti atsitiktinai? (T/N): "{}};}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302         std::cin >> pasirinkimas;}
+\DoxyCodeLine{303         \mbox{\hyperlink{declarations_8h_a7ab75aa46c72a7420a3ece770928c463}{checkInput}}(pasirinkimas);}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305         \textcolor{keywordflow}{if} (tolower(pasirinkimas) == \textcolor{charliteral}{'t'})}
+\DoxyCodeLine{306         \{}
+\DoxyCodeLine{307             std::cout << \textcolor{stringliteral}{"{}Pasirinkta duomenis generuoti atsitiktine tvarka."{}};}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; i++)}
+\DoxyCodeLine{310                 stud.\mbox{\hyperlink{class_studentas_a71de28751b8a26a0a130da7d973709bd}{addOneNd}}(gradeGen());}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312             stud.\mbox{\hyperlink{class_studentas_ad7097a9d0431a41a0f0f63770ef6559d}{setEgz}}(gradeGen());}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314             std::cout << std::endl}
+\DoxyCodeLine{315                 << \textcolor{stringliteral}{"{}Gauti pazymiai: "{}};}
+\DoxyCodeLine{316             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < stud.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}().size(); i++)}
+\DoxyCodeLine{317                 std::cout << stud.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}().at(i) << \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319             std::cout << std::endl}
+\DoxyCodeLine{320                 << \textcolor{stringliteral}{"{}Gautas egzamino ivertinimas: "{}}}
+\DoxyCodeLine{321                 << stud.\mbox{\hyperlink{class_studentas_a2f9dcb2fef2e6b3dbc1581779a90a68a}{getEgz}}()}
+\DoxyCodeLine{322                 << std::endl;}
+\DoxyCodeLine{323         \}}
+\DoxyCodeLine{324         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tolower(pasirinkimas) == \textcolor{charliteral}{'n'})}
+\DoxyCodeLine{325         \{}
+\DoxyCodeLine{326             std::cout << \textcolor{stringliteral}{"{}Pasirinktas duomenu ivedimas ranka."{}} <<}
+\DoxyCodeLine{327                 std::endl;}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329             \textcolor{keywordtype}{int} ivestis;}
+\DoxyCodeLine{330             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; i++)}
+\DoxyCodeLine{331             \{}
+\DoxyCodeLine{332                 }
+\DoxyCodeLine{333                 std::cout << \textcolor{stringliteral}{"{}Iveskite "{}} << i + 1 << \textcolor{stringliteral}{"{}-\/aji pazymi: "{}};}
+\DoxyCodeLine{334                 std::cin >> ivestis;}
+\DoxyCodeLine{335                 \mbox{\hyperlink{declarations_8h_a7ab75aa46c72a7420a3ece770928c463}{checkInput}}(ivestis, \textcolor{keyword}{true});}
+\DoxyCodeLine{336                 stud.\mbox{\hyperlink{class_studentas_a71de28751b8a26a0a130da7d973709bd}{addOneNd}}(ivestis);}
+\DoxyCodeLine{337             \}}
+\DoxyCodeLine{338             std::cout << \textcolor{stringliteral}{"{}Iveskite egzamino pazymi: "{}};}
+\DoxyCodeLine{339             std::cin >> ivestis;}
+\DoxyCodeLine{340             \mbox{\hyperlink{declarations_8h_a7ab75aa46c72a7420a3ece770928c463}{checkInput}}(ivestis, \textcolor{keyword}{true});}
+\DoxyCodeLine{341             stud.\mbox{\hyperlink{class_studentas_ad7097a9d0431a41a0f0f63770ef6559d}{setEgz}}(ivestis);}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343             std::cout << \textcolor{stringliteral}{"{}Baigtas duomenu ivedimas."{}}}
+\DoxyCodeLine{344                 << std::endl;}
+\DoxyCodeLine{345         \}}
+\DoxyCodeLine{346     \}}
+\DoxyCodeLine{347     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tolower(pasirinkimas) == \textcolor{charliteral}{'n'})}
+\DoxyCodeLine{348     \{}
+\DoxyCodeLine{349         std::cout << \textcolor{stringliteral}{"{}Kadangi studento namu darbu skaicius nezinomas,"{}}}
+\DoxyCodeLine{350             << \textcolor{stringliteral}{"{} atliekama ivestis rankiniu budu."{}}}
+\DoxyCodeLine{351             << std::endl;}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353         std::cout << \textcolor{stringliteral}{"{}Noredami nutraukti pazymiu ivedima, pazymi suveskite 0."{}}}
+\DoxyCodeLine{354             << std::endl;}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{357         \{}
+\DoxyCodeLine{358             \textcolor{keywordtype}{int} ivestis;}
+\DoxyCodeLine{359             std::cout << \textcolor{stringliteral}{"{}Iveskite "{}} << stud.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}().size() + 1 << \textcolor{stringliteral}{"{}-\/aji pazymi: "{}};}
+\DoxyCodeLine{360             std::cin >> ivestis;}
+\DoxyCodeLine{361             \mbox{\hyperlink{declarations_8h_a7ab75aa46c72a7420a3ece770928c463}{checkInput}}(ivestis, \textcolor{keyword}{true});}
+\DoxyCodeLine{362 }
+\DoxyCodeLine{363             \textcolor{keywordflow}{if} (ivestis == 0 \&\& stud.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}().size() > 0)}
+\DoxyCodeLine{364             \{}
+\DoxyCodeLine{365                 std::cout << \textcolor{stringliteral}{"{}Iveskite egzamino pazymi: "{}};}
+\DoxyCodeLine{366                 std::cin >> ivestis;}
+\DoxyCodeLine{367                 \mbox{\hyperlink{declarations_8h_a7ab75aa46c72a7420a3ece770928c463}{checkInput}}(ivestis, \textcolor{keyword}{true});}
+\DoxyCodeLine{368                 stud.\mbox{\hyperlink{class_studentas_ad7097a9d0431a41a0f0f63770ef6559d}{setEgz}}(ivestis);}
+\DoxyCodeLine{369                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{370             \}}
+\DoxyCodeLine{371             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ivestis == 0 \&\& stud.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}().size() == 0)}
+\DoxyCodeLine{372                 std::cout << \textcolor{stringliteral}{"{}Studentas turi tureti bent viena pazymi!"{}}}
+\DoxyCodeLine{373                 << std::endl;}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375             stud.\mbox{\hyperlink{class_studentas_a71de28751b8a26a0a130da7d973709bd}{addOneNd}}(ivestis);}
+\DoxyCodeLine{376         \}}
+\DoxyCodeLine{377     \}}
+\DoxyCodeLine{378     studentai.push\_back(stud);}
+\DoxyCodeLine{379 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_a51250f9cd5fb230ff749d9a4f749b904}\label{declarations_8h_a51250f9cd5fb230ff749d9a4f749b904}} 
+\index{declarations.h@{declarations.h}!readFromFile@{readFromFile}}
+\index{readFromFile@{readFromFile}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{readFromFile()}{readFromFile()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void read\+From\+File (\begin{DoxyParamCaption}\item[{T \&}]{studentai }\end{DoxyParamCaption})}
+
+
+
+Funkcija skirta pasirinktiniam duomenu ivedimui atlikti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & konteineris su kuriuo bus dirbama \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 87 of file declarations.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{88 \{}
+\DoxyCodeLine{89     \mbox{\hyperlink{class_studentas}{Studentas}} student;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     std::ifstream input;}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{keywordtype}{int} pasirinkimas;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     std::cout << \textcolor{stringliteral}{"{}Pasirinkite, kuri faila norite skaityti: "{}}}
+\DoxyCodeLine{96         << std::endl << \textcolor{stringliteral}{"{}(1) studentai1000.txt"{}}}
+\DoxyCodeLine{97         << std::endl << \textcolor{stringliteral}{"{}(2) studentai10000.txt"{}}}
+\DoxyCodeLine{98         << std::endl << \textcolor{stringliteral}{"{}(3) studentai100000.txt"{}}}
+\DoxyCodeLine{99         << std::endl << \textcolor{stringliteral}{"{}(4) studentai1000000.txt"{}}}
+\DoxyCodeLine{100         << std::endl << \textcolor{stringliteral}{"{}(5) studentai10000000.txt"{}}}
+\DoxyCodeLine{101         << std::endl << \textcolor{stringliteral}{"{}(6) sortdemo.txt"{}}}
+\DoxyCodeLine{102         << std::endl << \textcolor{stringliteral}{"{}(7) kursiokai.txt"{}}}
+\DoxyCodeLine{103         << std::endl;}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     std::cout << \textcolor{stringliteral}{"{}Jusu pasirinkimas: "{}};}
+\DoxyCodeLine{106     std::cin >> pasirinkimas;}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{109     \{}
+\DoxyCodeLine{110         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{111         \{}
+\DoxyCodeLine{112             \textcolor{keywordflow}{switch} (pasirinkimas)}
+\DoxyCodeLine{113             \{}
+\DoxyCodeLine{114             \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{115                 input.open(\textcolor{stringliteral}{"{}data/input/studentai1000.txt"{}});}
+\DoxyCodeLine{116                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{117             \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{118                 input.open(\textcolor{stringliteral}{"{}data/input/studentai10000.txt"{}});}
+\DoxyCodeLine{119                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{120             \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{121                 input.open(\textcolor{stringliteral}{"{}data/input/studentai100000.txt"{}});}
+\DoxyCodeLine{122                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{123             \textcolor{keywordflow}{case} 4:}
+\DoxyCodeLine{124                 input.open(\textcolor{stringliteral}{"{}data/input/studentai1000000.txt"{}});}
+\DoxyCodeLine{125                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{126             \textcolor{keywordflow}{case} 5:}
+\DoxyCodeLine{127                 input.open(\textcolor{stringliteral}{"{}data/input/studentai10000000.txt"{}});}
+\DoxyCodeLine{128                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{129             \textcolor{keywordflow}{case} 6:}
+\DoxyCodeLine{130                 input.open(\textcolor{stringliteral}{"{}data/input/sortdemo.txt"{}});}
+\DoxyCodeLine{131                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{132             \textcolor{keywordflow}{case} 7:}
+\DoxyCodeLine{133                 input.open(\textcolor{stringliteral}{"{}data0/input/kursiokai.txt"{}});}
+\DoxyCodeLine{134                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{135             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{136             \{}
+\DoxyCodeLine{137                 std::cout << \textcolor{stringliteral}{"{}Ivedete klaidinga reiksme! Pasirinkite skaiciu nuo 1 iki 7: "{}};}
+\DoxyCodeLine{138                 std::cin >> pasirinkimas;}
+\DoxyCodeLine{139                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{140             \}}
+\DoxyCodeLine{141             \}}
+\DoxyCodeLine{142             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{143         \}}
+\DoxyCodeLine{144         \textcolor{keywordflow}{if} (!input.good())}
+\DoxyCodeLine{145             \textcolor{keywordflow}{throw} 1;}
+\DoxyCodeLine{146     \}}
+\DoxyCodeLine{147     \textcolor{keywordflow}{catch} (\textcolor{keywordtype}{int} err)}
+\DoxyCodeLine{148     \{}
+\DoxyCodeLine{149         std::cout << \textcolor{stringliteral}{"{}Pasirinktas failas nerastas! Programos veikla uzbaigiama."{}};}
+\DoxyCodeLine{150         exit(1);}
+\DoxyCodeLine{151     \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     clockStart = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{154     input.ignore(256, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{157     \{}
+\DoxyCodeLine{158         \textcolor{keywordflow}{while} (!input.eof())}
+\DoxyCodeLine{159         \{}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161             std::string line, vardas, pavarde;}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163             input >> vardas >> pavarde;}
+\DoxyCodeLine{164             getline(input, line);}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166             std::stringstream stream(line);}
+\DoxyCodeLine{167             std::vector<int> values;}
+\DoxyCodeLine{168             \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{169             \textcolor{keywordtype}{double} avg = 0;}
+\DoxyCodeLine{170             \textcolor{keywordflow}{while} (stream >> n)}
+\DoxyCodeLine{171             \{}
+\DoxyCodeLine{172                 values.push\_back(n);}
+\DoxyCodeLine{173                 avg += n;}
+\DoxyCodeLine{174             \}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176             \textcolor{keywordflow}{if} (line.length() != 0)}
+\DoxyCodeLine{177             \{}
+\DoxyCodeLine{178                 avg -\/= n;}
+\DoxyCodeLine{179                 values.pop\_back();}
+\DoxyCodeLine{180                 avg /= values.size();}
+\DoxyCodeLine{181                 student.\mbox{\hyperlink{class_studentas_ad7097a9d0431a41a0f0f63770ef6559d}{setEgz}}(n);}
+\DoxyCodeLine{182                 student.\mbox{\hyperlink{class_studentas_a0dc0e863ab75a7c27e15471f094ef853}{addNd}}(values);}
+\DoxyCodeLine{183                 student.\mbox{\hyperlink{class_studentas_a11c4cc2f8433407fcc944b02ac99e0e1}{setVid}}(0.4 * avg + 0.6 * student.\mbox{\hyperlink{class_studentas_a2f9dcb2fef2e6b3dbc1581779a90a68a}{getEgz}}());}
+\DoxyCodeLine{184                 student.\mbox{\hyperlink{class_studentas_aad8d0068e4917f343f0c9e10a71aba69}{setMed}}(\mbox{\hyperlink{declarations_8h_a7973d2e0a026a60ea4dd3a233f7e9aca}{findMedian}}(student.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}(), student.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}().size()) * 0.4 + student.\mbox{\hyperlink{class_studentas_a2f9dcb2fef2e6b3dbc1581779a90a68a}{getEgz}}() * 0.6);}
+\DoxyCodeLine{185                 student.\mbox{\hyperlink{class_zmogus_a1fa1dc429f8219cf1ad8f172c083248c}{setVardas}}(vardas);}
+\DoxyCodeLine{186                 student.\mbox{\hyperlink{class_zmogus_a0a1d21e522ee1423e8b50d1306b6db28}{setPavarde}}(pavarde);}
+\DoxyCodeLine{187                 studentai.push\_back(student);}
+\DoxyCodeLine{188             \}}
+\DoxyCodeLine{189         \}}
+\DoxyCodeLine{190     \}}
+\DoxyCodeLine{191     \textcolor{keywordflow}{catch} (std::bad\_alloc\& exception)}
+\DoxyCodeLine{192     \{}
+\DoxyCodeLine{193         input.ignore(256, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{194         std::cout << \textcolor{stringliteral}{"{}Programa aptiko klaidu faile! Tolimesnis sklandus veikimas negarantuojamas."{}}}
+\DoxyCodeLine{195             << std::endl;}
+\DoxyCodeLine{196     \}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198     input.close();}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200     std::cout << \textcolor{stringliteral}{"{}Failo duomenys nuskaityti. "{}}}
+\DoxyCodeLine{201         << std::endl;}
+\DoxyCodeLine{202     std::cout << \textcolor{stringliteral}{"{}Nuskaitymas uztruko: "{}} << std::fixed << std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count() << \textcolor{stringliteral}{"{}s"{}} << std::endl;}
+\DoxyCodeLine{203     \mbox{\hyperlink{declarations_8h_a0e614e4d9cd7471ab7d1abe13f5f9a14}{accumulatedTime}} += std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count();}
+\DoxyCodeLine{204 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_a01454fece5717f5e993787e2e334de91}\label{declarations_8h_a01454fece5717f5e993787e2e334de91}} 
+\index{declarations.h@{declarations.h}!readFromFileAutomated@{readFromFileAutomated}}
+\index{readFromFileAutomated@{readFromFileAutomated}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{readFromFileAutomated()}{readFromFileAutomated()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void read\+From\+File\+Automated (\begin{DoxyParamCaption}\item[{T \&}]{studentai,  }\item[{int}]{studentu\+Skaicius,  }\item[{std\+::ifstream \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Funkcija skirta nuosekliam duomenu ivedimui atlikti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & konteineris su kuriuo bus dirbama \\
+\hline
+{\em studentu\+Skaicius} & su kokiu skaiciumi studentu bus dirbama \\
+\hline
+{\em input} & input filestream su kuriuo bus dirbama \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 213 of file declarations.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{214 \{}
+\DoxyCodeLine{215     \mbox{\hyperlink{class_studentas}{Studentas}} student;}
+\DoxyCodeLine{216     std::string fileName = \textcolor{stringliteral}{"{}studentai"{}} + std::to\_string(studentuSkaicius) + \textcolor{stringliteral}{"{}.txt"{}};}
+\DoxyCodeLine{217     input.open(\textcolor{stringliteral}{"{}data/input/"{}} + fileName);}
+\DoxyCodeLine{218     input.ignore(256, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{219     }
+\DoxyCodeLine{220     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{221     \{}
+\DoxyCodeLine{222         \textcolor{keywordflow}{while} (!input.eof())}
+\DoxyCodeLine{223         \{}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225             std::string line, vardas, pavarde;}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227             input >> vardas >> pavarde;}
+\DoxyCodeLine{228             getline(input, line);}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230             std::stringstream stream(line);}
+\DoxyCodeLine{231             std::vector<int> values;}
+\DoxyCodeLine{232             \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{233             \textcolor{keywordtype}{double} avg = 0;}
+\DoxyCodeLine{234             \textcolor{keywordflow}{while} (stream >> n)}
+\DoxyCodeLine{235             \{}
+\DoxyCodeLine{236                 values.push\_back(n);}
+\DoxyCodeLine{237                 avg += n;}
+\DoxyCodeLine{238             \}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240             \textcolor{keywordflow}{if} (line.length() != 0)}
+\DoxyCodeLine{241             \{}
+\DoxyCodeLine{242                 avg -\/= n;}
+\DoxyCodeLine{243                 values.pop\_back();}
+\DoxyCodeLine{244                 avg /= values.size();}
+\DoxyCodeLine{245                 student.\mbox{\hyperlink{class_studentas_ad7097a9d0431a41a0f0f63770ef6559d}{setEgz}}(n);}
+\DoxyCodeLine{246                 student.\mbox{\hyperlink{class_studentas_a0dc0e863ab75a7c27e15471f094ef853}{addNd}}(values);}
+\DoxyCodeLine{247                 student.\mbox{\hyperlink{class_studentas_a11c4cc2f8433407fcc944b02ac99e0e1}{setVid}}(0.4 * avg + 0.6 * student.\mbox{\hyperlink{class_studentas_a2f9dcb2fef2e6b3dbc1581779a90a68a}{getEgz}}());}
+\DoxyCodeLine{248                 student.\mbox{\hyperlink{class_studentas_aad8d0068e4917f343f0c9e10a71aba69}{setMed}}(\mbox{\hyperlink{declarations_8h_a7973d2e0a026a60ea4dd3a233f7e9aca}{findMedian}}(student.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}(), student.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}().size()) * 0.4 + student.\mbox{\hyperlink{class_studentas_a2f9dcb2fef2e6b3dbc1581779a90a68a}{getEgz}}() * 0.6);}
+\DoxyCodeLine{249                 student.\mbox{\hyperlink{class_zmogus_a1fa1dc429f8219cf1ad8f172c083248c}{setVardas}}(vardas);}
+\DoxyCodeLine{250                 student.\mbox{\hyperlink{class_zmogus_a0a1d21e522ee1423e8b50d1306b6db28}{setPavarde}}(pavarde);}
+\DoxyCodeLine{251                 studentai.push\_back(student);}
+\DoxyCodeLine{252             \}}
+\DoxyCodeLine{253         \}}
+\DoxyCodeLine{254     \}}
+\DoxyCodeLine{255     \textcolor{keywordflow}{catch} (std::bad\_alloc\& exception)}
+\DoxyCodeLine{256     \{}
+\DoxyCodeLine{257         input.ignore(256, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{258         std::cout << \textcolor{stringliteral}{"{}Programa aptiko klaidu faile! Tolimesnis sklandus veikimas negarantuojamas."{}}}
+\DoxyCodeLine{259             << std::endl;}
+\DoxyCodeLine{260     \}}
+\DoxyCodeLine{261     input.close();}
+\DoxyCodeLine{262 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_a3f77417b45b97e4344913b80fb4fb193}\label{declarations_8h_a3f77417b45b97e4344913b80fb4fb193}} 
+\index{declarations.h@{declarations.h}!thenPrint@{thenPrint}}
+\index{thenPrint@{thenPrint}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{thenPrint()}{thenPrint()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void then\+Print (\begin{DoxyParamCaption}\item[{T \&}]{studentai,  }\item[{T \&}]{vargsiukai,  }\item[{int}]{studentu\+Failu\+Dydziai,  }\item[{std\+::ofstream \&}]{output,  }\item[{double \&}]{benchmark\+Time,  }\item[{char}]{container\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Automatizuotos programos veiklos funkcija skirta duomenu isvedimui. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & kietiaku konteineris su kuriuo bus dirbama \\
+\hline
+{\em vargsiukai} & vargsiuku konteineris su kuriuo bus dirbama \\
+\hline
+{\em studentu\+Failu\+Dydziai} & studentu skaicius su kuriuo bus dirbama \\
+\hline
+{\em output} & output filestream su kuriuo bus dirbama \\
+\hline
+{\em benchmark\+Time} & laikas kuri programa uztrunka kol vykdo sia funkcija \\
+\hline
+{\em container} & konteinerio pavadinimas, su kuriuo tuo metu dirbama \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 459 of file declarations.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{460 \{}
+\DoxyCodeLine{461     clockStart = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{462     std::cout << \textcolor{stringliteral}{"{}Vykdomas "{}} << studentuFailuDydziai << \textcolor{stringliteral}{"{} studentu duomenu isvedimas i faila."{}} << std::endl;}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464     std::string containerName = container;}
+\DoxyCodeLine{465     output.open(\textcolor{stringliteral}{"{}data/output/kietiakai"{}} + containerName + std::to\_string(studentuFailuDydziai) + \textcolor{stringliteral}{"{}.txt"{}});}
+\DoxyCodeLine{466     \mbox{\hyperlink{declarations_8h_aa72a74e3df98e95bce2503ecc3a7e53e}{writeToConsoleMed}}(studentai, output);}
+\DoxyCodeLine{467     output.close();}
+\DoxyCodeLine{468 }
+\DoxyCodeLine{469     output.open(\textcolor{stringliteral}{"{}data/output/vargsiukai"{}} + containerName + std::to\_string(studentuFailuDydziai) + \textcolor{stringliteral}{"{}.txt"{}});}
+\DoxyCodeLine{470     \mbox{\hyperlink{declarations_8h_aa72a74e3df98e95bce2503ecc3a7e53e}{writeToConsoleMed}}(vargsiukai, output);}
+\DoxyCodeLine{471     output.close();}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473     std::cout << \textcolor{stringliteral}{"{}Isvestis truko: "{}} << std::fixed << std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count() << \textcolor{stringliteral}{"{}s"{}} << std::endl;}
+\DoxyCodeLine{474     benchmarkTime += std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count();}
+\DoxyCodeLine{475     \mbox{\hyperlink{declarations_8h_a0e614e4d9cd7471ab7d1abe13f5f9a14}{accumulatedTime}} += benchmarkTime;}
+\DoxyCodeLine{476     std::cout << studentuFailuDydziai << \textcolor{stringliteral}{"{} isvedimas is viso truko: "{}} << benchmarkTime << \textcolor{stringliteral}{"{} s"{}} << std::endl;}
+\DoxyCodeLine{477 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_a520b4ad1282f44afe03049f77531e674}\label{declarations_8h_a520b4ad1282f44afe03049f77531e674}} 
+\index{declarations.h@{declarations.h}!workFlow@{workFlow}}
+\index{workFlow@{workFlow}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{workFlow()}{workFlow()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void work\+Flow (\begin{DoxyParamCaption}\item[{T \&}]{studentai,  }\item[{int}]{studentu\+Failu\+Dydziai,  }\item[{std\+::ifstream \&}]{input,  }\item[{std\+::ofstream \&}]{output,  }\item[{double \&}]{benchmark\+Time }\end{DoxyParamCaption})}
+
+
+
+Automatizuotos programos veiklos funkcija skirta duomenu nuskaitymui. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & konteineris su kuriuo bus dirbama \\
+\hline
+{\em studentu\+Failu\+Dydziai} & studentu skaicius su kuriuo bus dirbama \\
+\hline
+{\em input} & input filestream su kuriuo bus dirbama \\
+\hline
+{\em output} & output filestream su kuriuo bus dirbama \\
+\hline
+{\em benchmark\+Time} & laikas kuri programa uztrunka kol vykdo sia funkcija \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 440 of file declarations.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{441 \{}
+\DoxyCodeLine{442     std::cout << \textcolor{stringliteral}{"{}Vykdomas failo nuskaitymas."{}} << std::endl;}
+\DoxyCodeLine{443     clockStart = std::chrono::steady\_clock::now();}
+\DoxyCodeLine{444     \mbox{\hyperlink{declarations_8h_a01454fece5717f5e993787e2e334de91}{readFromFileAutomated}}(studentai, studentuFailuDydziai, input);}
+\DoxyCodeLine{445     benchmarkTime += std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count();}
+\DoxyCodeLine{446     std::cout << studentuFailuDydziai << \textcolor{stringliteral}{"{} studentu failo nuskaitymas truko: "{}} << std::fixed << std::chrono::duration<double>(std::chrono::steady\_clock::now() -\/ clockStart).count() << \textcolor{stringliteral}{"{}s"{}} << std::endl;}
+\DoxyCodeLine{447 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_a3d1908dde9f9138320910efa393b45ca}\label{declarations_8h_a3d1908dde9f9138320910efa393b45ca}} 
+\index{declarations.h@{declarations.h}!writeToConsoleAvg@{writeToConsoleAvg}}
+\index{writeToConsoleAvg@{writeToConsoleAvg}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{writeToConsoleAvg()}{writeToConsoleAvg()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void write\+To\+Console\+Avg (\begin{DoxyParamCaption}\item[{T \&}]{studentai,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption})}
+
+
+
+Funkcija skirta vidurkio isvedimui atlikti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & konteineris su kuriuo bus dirbama \\
+\hline
+{\em output} & output (file) stream su kuriuo bus dirbama \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 387 of file declarations.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{388 \{}
+\DoxyCodeLine{389     out << std::left}
+\DoxyCodeLine{390         << std::setw(20) << \textcolor{stringliteral}{"{}Pavarde"{}}}
+\DoxyCodeLine{391         << std::setw(15) << \textcolor{stringliteral}{"{}Vardas"{}}}
+\DoxyCodeLine{392         << std::setw(10) << \textcolor{stringliteral}{"{}Galutinis "{}} << \textcolor{stringliteral}{"{}(Vid.)"{}} << \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{393         << std::string(65, \textcolor{charliteral}{'-\/'})}
+\DoxyCodeLine{394         << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keyword}{const}\& i : studentai)}
+\DoxyCodeLine{397     \{}
+\DoxyCodeLine{398         out << std::left}
+\DoxyCodeLine{399             << std::setw(20) << i.getPavarde()}
+\DoxyCodeLine{400             << std::setw(15) << i.getVardas()}
+\DoxyCodeLine{401             << std::setw(15) << std::fixed << std::setprecision(2) << i.getVid()}
+\DoxyCodeLine{402             << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{403     \}}
+\DoxyCodeLine{404 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{declarations_8h_aa72a74e3df98e95bce2503ecc3a7e53e}\label{declarations_8h_aa72a74e3df98e95bce2503ecc3a7e53e}} 
+\index{declarations.h@{declarations.h}!writeToConsoleMed@{writeToConsoleMed}}
+\index{writeToConsoleMed@{writeToConsoleMed}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{writeToConsoleMed()}{writeToConsoleMed()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void write\+To\+Console\+Med (\begin{DoxyParamCaption}\item[{T \&}]{studentai,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption})}
+
+
+
+Funkcija skirta medianos isvedimui atlikti. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & konteineris su kuriuo bus dirbama \\
+\hline
+{\em output} & output (file) stream su kuriuo bus dirbama \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 412 of file declarations.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{413 \{}
+\DoxyCodeLine{414     out << std::left}
+\DoxyCodeLine{415         << std::setw(20) << \textcolor{stringliteral}{"{}Pavarde"{}}}
+\DoxyCodeLine{416         << std::setw(15) << \textcolor{stringliteral}{"{}Vardas"{}}}
+\DoxyCodeLine{417         << std::setw(10) << \textcolor{stringliteral}{"{}Galutinis "{}} << \textcolor{stringliteral}{"{}(Med.)"{}} << \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{418         << std::string(65, \textcolor{charliteral}{'-\/'})}
+\DoxyCodeLine{419         << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{420 }
+\DoxyCodeLine{421     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keyword}{const}\& i : studentai)}
+\DoxyCodeLine{422     \{}
+\DoxyCodeLine{423         out << std::left}
+\DoxyCodeLine{424             << std::setw(20) << i.getPavarde()}
+\DoxyCodeLine{425             << std::setw(15) << i.getVardas()}
+\DoxyCodeLine{426             << std::setw(15) << std::fixed << std::setprecision(2) << i.getMed()}
+\DoxyCodeLine{427             << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{428     \}}
+\DoxyCodeLine{429 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{declarations_8h_a0e614e4d9cd7471ab7d1abe13f5f9a14}\label{declarations_8h_a0e614e4d9cd7471ab7d1abe13f5f9a14}} 
+\index{declarations.h@{declarations.h}!accumulatedTime@{accumulatedTime}}
+\index{accumulatedTime@{accumulatedTime}!declarations.h@{declarations.h}}
+\doxysubsubsection{\texorpdfstring{accumulatedTime}{accumulatedTime}}
+{\footnotesize\ttfamily double accumulated\+Time\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line 3 of file main.\+cpp.
+

@@ -1,0 +1,76 @@
+\hypertarget{unit__tests_8cpp}{}\doxysection{C\+:/\+Users/gusta/\+Desktop/\+VU ISI 1/1 kursas/2 semestras/\+Objektinis/2 uzduotis/pazymiu-\/skaiciuokle-\/2/unit\+\_\+tests.cpp File Reference}
+\label{unit__tests_8cpp}\index{C:/Users/gusta/Desktop/VU ISI 1/1 kursas/2 semestras/Objektinis/2 uzduotis/pazymiu-\/skaiciuokle-\/2/unit\_tests.cpp@{C:/Users/gusta/Desktop/VU ISI 1/1 kursas/2 semestras/Objektinis/2 uzduotis/pazymiu-\/skaiciuokle-\/2/unit\_tests.cpp}}
+{\ttfamily \#include \char`\"{}declarations.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{unit__tests_8cpp_a656eb5868e824d59f489f910db438420}{CATCH\+\_\+\+CONFIG\+\_\+\+MAIN}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{unit__tests_8cpp_a3320f87a9763e86bc9798712dc07a854}{TEST\+\_\+\+CASE}} (\char`\"{}Studento klases patikrinimas\char`\"{}, \char`\"{}\mbox{[}\mbox{\hyperlink{class_studentas}{Studentas}}\mbox{]}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Unit testai studento klasei patikrinti. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{unit__tests_8cpp_a656eb5868e824d59f489f910db438420}\label{unit__tests_8cpp_a656eb5868e824d59f489f910db438420}} 
+\index{unit\_tests.cpp@{unit\_tests.cpp}!CATCH\_CONFIG\_MAIN@{CATCH\_CONFIG\_MAIN}}
+\index{CATCH\_CONFIG\_MAIN@{CATCH\_CONFIG\_MAIN}!unit\_tests.cpp@{unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{CATCH\_CONFIG\_MAIN}{CATCH\_CONFIG\_MAIN}}
+{\footnotesize\ttfamily \#define CATCH\+\_\+\+CONFIG\+\_\+\+MAIN}
+
+
+
+Definition at line 1 of file unit\+\_\+tests.\+cpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{unit__tests_8cpp_a3320f87a9763e86bc9798712dc07a854}\label{unit__tests_8cpp_a3320f87a9763e86bc9798712dc07a854}} 
+\index{unit\_tests.cpp@{unit\_tests.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!unit\_tests.cpp@{unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\char`\"{}Studento klases patikrinimas\char`\"{}}]{,  }\item[{\char`\"{}\char`\"{}}]{\mbox{[}\+Studentas\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Unit testai studento klasei patikrinti. 
+
+
+
+Definition at line 5 of file unit\+\_\+tests.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8     \mbox{\hyperlink{class_studentas}{Studentas}} studentas;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     REQUIRE(studentas.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}().size() == 0);}
+\DoxyCodeLine{11     SECTION(\textcolor{stringliteral}{"{}Nustatomas vardas ir pavarde"{}}) }
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13         studentas.\mbox{\hyperlink{class_zmogus_a1fa1dc429f8219cf1ad8f172c083248c}{setVardas}}(\textcolor{stringliteral}{"{}Bandymas"{}});}
+\DoxyCodeLine{14         studentas.\mbox{\hyperlink{class_zmogus_a0a1d21e522ee1423e8b50d1306b6db28}{setPavarde}}(\textcolor{stringliteral}{"{}BBandymas"{}});}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         REQUIRE(studentas.\mbox{\hyperlink{class_zmogus_a4a580af3507a2d27efe978d5be0075ab}{getVardas}}() == \textcolor{stringliteral}{"{}Bandymas"{}});}
+\DoxyCodeLine{17         REQUIRE(studentas.\mbox{\hyperlink{class_zmogus_ac50d1e325af387bb385eb88bb7ff42b7}{getPavarde}}() == \textcolor{stringliteral}{"{}BBandymas"{}});}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19     SECTION(\textcolor{stringliteral}{"{}Pridedamas vienas namu darbas"{}}) }
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21         studentas.\mbox{\hyperlink{class_studentas_a71de28751b8a26a0a130da7d973709bd}{addOneNd}}(10);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         REQUIRE(studentas.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}().size() == 1);}
+\DoxyCodeLine{24         REQUIRE(studentas.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}().at(0) == 10);}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26     SECTION(\textcolor{stringliteral}{"{}Paimama namu darbu aibe"{}}) }
+\DoxyCodeLine{27     \{}
+\DoxyCodeLine{28         std::vector<int> ndList\{10, 5, 7, 4, 10\};}
+\DoxyCodeLine{29         studentas.\mbox{\hyperlink{class_studentas_a0dc0e863ab75a7c27e15471f094ef853}{addNd}}(ndList);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         REQUIRE(studentas.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}().size() == 5);}
+\DoxyCodeLine{32         REQUIRE(studentas.\mbox{\hyperlink{class_studentas_a35a27fb46249e2630dc6836e4b7e06eb}{getNd}}() == ndList);}
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34 \}}
+
+\end{DoxyCode}
