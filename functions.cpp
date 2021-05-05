@@ -151,18 +151,18 @@ void generationSequence(int studentuFailuDydziai, std::ofstream& output, double&
   \param n pazymiu aibes dydis
   \return mediana
 */
-double findMedian(std::vector<int> grades, int n)
+double findMedian(ManoVector<int> grades, int n)
 {
 	if (n % 2 == 0) {
 
-		nth_element(grades.begin(), grades.begin() + n / 2, grades.end());
+		std::nth_element(grades.begin(), grades.begin() + n / 2, grades.end());
 
-		nth_element(grades.begin(), grades.begin() + (n - 1) / 2, grades.end());
+		std::nth_element(grades.begin(), grades.begin() + (n - 1) / 2, grades.end());
 
 		return (double)(grades[(n - 1) / 2] + grades[n / 2]) / 2.0;
 	}
 	else {
-		nth_element(grades.begin(), grades.begin() + n / 2, grades.end());
+		std::nth_element(grades.begin(), grades.begin() + n / 2, grades.end());
 		return (double)grades[n / 2];
 	}
 }

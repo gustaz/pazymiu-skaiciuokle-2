@@ -2,7 +2,7 @@
 #define STUDENTASH
 
 #include "zmogus.h"
-#include <vector>
+#include "ManoVector.h"
 
 //! Studento klase. 
 /*!
@@ -12,7 +12,7 @@
 class Studentas : public Zmogus {
 private:
     int egz; /*!< Studento gautas egzamino ivertis */
-    std::vector<int> nd; /*!< Studento namu darbu aibe */
+    ManoVector<int> nd; /*!< Studento namu darbu aibe */
     double vid; /*!< Studento aritmetinis vidurkis */
     double med; /*!< Studento pazymiu mediana */
 public:
@@ -22,7 +22,7 @@ public:
     */
     Studentas() : egz(0), vid(0), med(0) { Zmogus::vardas = "", Zmogus::pavarde = ""; }
 
-    Studentas(std::string vardas_, std::string pavarde_, int egz, std::vector<int> nd, double vid, double med) : egz(egz), vid(vid), med(med) { vardas = vardas_; pavarde = pavarde_; }
+    Studentas(std::string vardas_, std::string pavarde_, int egz, ManoVector<int> nd, double vid, double med) : egz(egz), vid(vid), med(med) { vardas = vardas_; pavarde = pavarde_; }
     //! Copy konstruktorius.
     /*!
       Konstruktorius skirtas perduoti parametrus is vieno sios klases objekto kitam.
@@ -74,7 +74,7 @@ public:
     /*!
       \return pavarde
     */
-    inline std::vector<int> getNd() const { return nd; }
+    inline ManoVector<int> getNd() const { return nd; }
     //! Member funkcija aritmetiniui vidurkiui gauti.
     /*!
       \return vid
@@ -99,7 +99,7 @@ public:
     /*!
       \param nd kuri namu darbu aibe bus nustatoma 
     */
-    inline void addNd(std::vector<int> nd) { Studentas::nd = nd; }
+    inline void addNd(ManoVector<int> nd) { Studentas::nd = nd; }
     //! Member funkcija aritmetiniam vidurkiui nustatyti
     /*!
       \param vid kuris aritmetinis vidurkis bus nustatomas

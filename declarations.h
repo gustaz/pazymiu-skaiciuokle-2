@@ -77,7 +77,7 @@ void checkInput(char& ivestis);
 void generateFile(int numberOfStudents, std::ofstream& output);
 void generateDirectories(std::string directory);
 void askForGeneration();
-double findMedian(std::vector<int> grades, int n);
+double findMedian(ManoVector<int> grades, int n);
 
 //! Funkcija skirta pasirinktiniam duomenu ivedimui atlikti.
 /*!
@@ -164,7 +164,7 @@ void readFromFile(T& studentai)
 			getline(input, line);
 
 			std::stringstream stream(line);
-			std::vector<int> values;
+			ManoVector<int> values;
 			int n = 0;
 			double avg = 0;
 			while (stream >> n)
@@ -228,7 +228,7 @@ void readFromFileAutomated(T& studentai, int studentuSkaicius, std::ifstream& in
 			getline(input, line);
 
 			std::stringstream stream(line);
-			std::vector<int> values;
+			ManoVector<int> values;
 			int n = 0;
 			double avg = 0;
 			while (stream >> n)

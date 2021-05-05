@@ -15,9 +15,6 @@ int main(int argc, char* argv[])
 	char pasirinkimas;
 	bool isValid = false;
 	std::cout << std::endl;
-	for (int i = 0; i < argc; i++)
-		std::cout << argv[i] << std::endl;
-	std::cout << argc;
 	if (argc > 1)
 	{
 		
@@ -27,8 +24,8 @@ int main(int argc, char* argv[])
 
 		if (isValid)
 		{
-			//std::vector<int> studentuFailuDydziai = { 1000, 10000, 100000, 1000000, 10000000 };
-			std::vector<int> studentuFailuDydziai = { 1000, 10000, 100000 };
+			//ManoVector<int> studentuFailuDydziai = { 1000, 10000, 100000, 1000000, 10000000 };
+			ManoVector<int> studentuFailuDydziai = { 100000 };
 			std::ofstream output;
 			std::ifstream input;
 
@@ -68,7 +65,7 @@ int main(int argc, char* argv[])
 					if (strcmp(argv[i], "vector") == 0)
 					{
 						std::cout << "Pradedamas darbas su " << studentuFailuDydziai[j] << " " << argv[i] << " konteineriu" << std::endl;
-						std::vector<Studentas> studentai;
+						ManoVector<Studentas> studentai;
 
 						workFlow(studentai, studentuFailuDydziai[j], input, output, benchmarkTime);
 
@@ -76,7 +73,7 @@ int main(int argc, char* argv[])
 						clockStart = std::chrono::steady_clock::now();
 
 						auto it = std::stable_partition(studentai.begin(), studentai.end(), isKietiakas());
-						std::vector<Studentas> vargsiukai(std::make_move_iterator(it), std::make_move_iterator(studentai.end()));
+						ManoVector<Studentas> vargsiukai(std::make_move_iterator(it), std::make_move_iterator(studentai.end()));
 						studentai.erase(it, studentai.end());
 						//std::sort(studentai.begin(), studentai.end(), surnameCompare);
 
@@ -129,7 +126,7 @@ int main(int argc, char* argv[])
 	if (argc <= 1 || !isValid)
 	{
 		std::cout << "Nepasirinkti (teisingi) vykdymo argumentai programos paleidimo metu, todel pereinama prie iprastos veiklos. " << std::endl;
-		std::vector<Studentas> studentai;
+		ManoVector<Studentas> studentai;
 		std::cout << "Ar norite vykdyti failu generacija? (T/N): ";
 		std::cin >> pasirinkimas;
 		checkInput(pasirinkimas);
@@ -208,8 +205,8 @@ int main(int argc, char* argv[])
 
 		if (tolower(pasirinkimas) == 't')
 		{
-			std::vector<Studentas> kietiakai;
-			std::vector<Studentas> vargsiukai;
+			ManoVector<Studentas> kietiakai;
+			ManoVector<Studentas> vargsiukai;
 			outputDone = true;
 
 			std::cout << "Pasirinkote surusiavima ir isvesti i faila."
